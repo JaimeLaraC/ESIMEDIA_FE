@@ -1,0 +1,489 @@
+/* ===================================
+   🧭 HEADER / BARRA DE NAVEGACIÓN
+   =================================== */
+
+/* 🎯 CONTENEDOR PRINCIPAL DEL HEADER - Barra fija superior */
+.header {
+  /* 📐 POSICIONAMIENTO */
+  position: fixed;          /* Fijo en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;             /* Por encima de otros elementos */
+  width: 100vw;            /* Ancho completo del viewport */
+  height: auto;            /* Altura automática sin expansión */
+  min-height: fit-content; /* Altura mínima del contenido */
+  
+  /* 🎨 EFECTOS VISUALES */
+  background: rgb(11, 15, 23);             /* Fondo sólido sin transparencia */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);  /* Línea inferior sutil */
+  
+  /* 🚫 ELIMINAR OUTLINES NO DESEADOS */
+  outline: none !important;
+}
+
+/* 🚫 ELIMINAR OUTLINES DE TODOS LOS ELEMENTOS DEL HEADER */
+.header *,
+.header *:focus,
+.header *:active,
+.header button,
+.header button:focus,
+.header button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 📦 CONTENIDO INTERNO DEL HEADER - Layout de elementos */
+.header-inner {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;      /* Alineación vertical centrada */
+  gap: clamp(10px, 1.5vw, 20px);          /* Espaciado entre elementos */
+  padding: clamp(8px, 1vw, 16px) var(--horizontal-padding);  /* Padding responsivo */
+  box-sizing: border-box;
+  height: auto;            /* Altura automática sin expansión */
+  min-height: fit-content; /* Altura mínima del contenido */
+}
+
+/* 👈 GRUPO IZQUIERDO DEL HEADER */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 20px);  /* Mismo gap que header-inner */
+  flex: 1;                         /* Toma el espacio disponible */
+}
+
+/* 👉 GRUPO DERECHO DEL HEADER */
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 20px);  /* Espacio entre selector de idioma y botón */
+  margin-left: auto;          /* Se empuja completamente a la derecha */
+}
+
+/* 🏷️ MARCA/LOGO - Elemento de branding */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 16px);  /* Espacio entre logo y texto */
+  padding-right: clamp(8px, 1vw, 16px);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.brand:hover {
+  opacity: 0.8;
+}
+
+.brand img {
+  height: clamp(28px, 3vw, 48px);  /* Altura responsiva del logo */
+  width: auto;              /* Mantiene proporción */
+  display: block;
+}
+
+/* 🧭 NAVEGACIÓN - Botones del menú principal */
+.nav {
+  display: flex;
+  gap: clamp(6px, 0.8vw, 12px);
+  align-items: center;
+}
+
+/* 🔘 BOTONES DE NAVEGACIÓN */
+.nav button,
+.nav a {
+  /* 🎨 ESTILOS BASE */
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #263045;
+  padding: clamp(6px, 0.8vw, 12px) clamp(10px, 1.2vw, 18px);
+  border-radius: clamp(8px, 1vw, 14px);
+  font-size: clamp(12px, 1vw, 15px);
+  text-decoration: none; /* Para los enlaces */
+  display: inline-block; /* Para que funcione el padding correctamente */
+  
+  /* ⚡ INTERACTIVIDAD */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav button:hover,
+.nav a:hover {
+  border-color: #34415f;    /* Color del borde al hacer hover */
+  transform: translateY(-1px);  /* Efecto de elevación */
+}
+
+/* 🔍 BARRA DE BÚSQUEDA */
+.search {
+  /* 📐 DIMENSIONES Y POSICIONAMIENTO */
+  flex: 1;
+  min-width: clamp(140px, 20vw, 300px);
+  max-width: clamp(250px, 35vw, 500px);
+  margin-left: clamp(10px, 1.5vw, 20px);  /* Separación igual que gap del header */
+  
+  /* 🎨 ESTILOS */
+  display: flex;
+  align-items: center;
+  background: #0e1524;      /* Fondo oscuro */
+  border: 1px solid #202a44;
+  border-radius: clamp(8px, 1vw, 14px);
+  padding: clamp(6px, 0.8vw, 12px) clamp(8px, 1vw, 16px);
+  transition: all 0.2s ease;
+  position: relative;       /* Para posicionar el botón absolutamente */
+}
+
+.search input {
+  all: unset;               /* Reset de estilos del input */
+  color: var(--text);
+  flex: 1;                  /* Toma el espacio disponible */
+  font-size: clamp(12px, 1vw, 15px);
+  padding-right: clamp(40px, 3vw, 48px); /* Espacio para el botón */
+}
+
+.search:focus-within {
+  box-shadow: var(--ring);  /* Efecto de foco */
+  border-color: var(--accent-2);
+}
+
+/* 🔍 BOTÓN DE BÚSQUEDA */
+.search-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  position: absolute;        /* Posicionamiento absoluto */
+  right: clamp(8px, 1vw, 16px); /* Alineado al borde derecho del contenedor */
+  top: 50%;                 /* Centrado verticalmente */
+  transform: translateY(-50%); /* Centrado perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  border-radius: 4px;
+  width: clamp(24px, 2vw, 32px);
+  height: clamp(24px, 2vw, 32px);
+}
+
+.search-btn:hover {
+  color: var(--accent-1);
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.search-btn .material-symbols-outlined {
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* .cta - Movido a Buttons.css para centralización */
+
+/* ===================================
+   📱💻 SISTEMA RESPONSIVE COMPLETO DEL HEADER
+   =================================== */
+
+/* 🎯 ESTILOS ESPECÍFICOS DE VERSIONES DESKTOP/MOBILE */
+
+/* Brand desktop (normal) */
+.desktop-brand {
+  display: flex;
+}
+
+/* Botón del brand para móviles */
+.mobile-brand-btn {
+  display: none;
+  background: rgb(11, 15, 23); /* Mismo fondo sólido que el header */
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.mobile-brand-btn:hover {
+  background: rgb(11, 15, 23);
+  transform: scale(1.05);
+}
+
+/* 📱 MENÚ DESPLEGABLE MÓVIL */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--header-height, 60px); /* Justo debajo del header */
+  left: clamp(12px, 3vw, 20px); /* Pequeño margen desde el borde izquierdo */
+  background: rgb(11, 15, 23); /* Fondo sólido consistente */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none; /* Sin borde superior para unión con header */
+  border-radius: 0 0 calc(var(--radius) + 4px) calc(var(--radius) + 4px); /* Bordes más redondeados */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 
+              0 4px 12px rgba(0, 229, 255, 0.1); /* Doble sombra con acento */
+  z-index: 45; /* Justo por encima del header (40) pero sin conflictos */
+  width: 80vw; /* Ancho por defecto para móviles */
+  max-width: 400px; /* Límite máximo */
+  overflow: hidden;
+}
+
+.mobile-menu-open {
+  display: block !important;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔍 BÚSQUEDA MÓVIL */
+.mobile-search-container {
+  padding: clamp(16px, 4vw, 20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgb(11, 15, 23); /* Fondo sólido consistente */
+  position: relative;
+}
+
+.mobile-search-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+  opacity: 0.3;
+}
+
+.mobile-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+}
+
+.mobile-search input {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
+  color: var(--text);
+  font-size: clamp(14px, 3vw, 16px);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.mobile-search input::placeholder {
+  color: var(--muted);
+}
+
+.mobile-search input:focus {
+  outline: none;
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+/* 🔍 BOTÓN DE BÚSQUEDA MÓVIL */
+.mobile-search-btn {
+  background: var(--accent-1);
+  border: none;
+  color: #0e1524;
+  cursor: pointer;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-search-btn:hover {
+  background: var(--accent-2);
+  transform: scale(1.05);
+}
+
+.mobile-search-btn .material-symbols-outlined {
+  font-size: clamp(18px, 3vw, 20px);
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+/* 🧭 NAVEGACIÓN MÓVIL */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav button,
+.mobile-nav a {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: clamp(16px, 4vw, 20px) clamp(20px, 5vw, 24px);
+  text-align: left;
+  cursor: pointer;
+  font-size: clamp(15px, 3.5vw, 17px);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  text-decoration: none; /* Para los enlaces */
+  display: block; /* Para que funcione el width: 100% */
+}
+
+.mobile-nav button:last-child,
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav button:hover,
+.mobile-nav a:hover {
+  background: rgb(11, 15, 23); /* Fondo sólido consistente */
+  color: var(--accent-1);
+  transform: translateX(4px);
+  border-left: 2px solid var(--accent-1);
+}
+
+.mobile-nav button:active,
+.mobile-nav a:active {
+  background: rgb(11, 15, 23); /* Fondo sólido consistente */
+  transform: translateX(2px);
+}
+
+/* 🎯 SOBRESCRIBIR ESTILOS DE BOTONES ESPECÍFICOS EN MÓVIL */
+.mobile-nav .btn-premium-header {
+  /* Mismo comportamiento que otros botones móviles pero con fondo amarillo */
+  padding: clamp(16px, 4vw, 20px) clamp(20px, 5vw, 24px) !important;
+  border-radius: 0 !important;
+  background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  font-size: clamp(15px, 3.5vw, 17px) !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  width: 100% !important;
+  margin: 0 !important;
+  display: block !important;
+  height: auto !important;
+  line-height: normal !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-nav .btn-premium-header:hover {
+  background: linear-gradient(135deg, #ffed4e, #fff44f) !important;
+  color: #1a1a1a !important;
+  transform: translateX(4px) !important;
+  border-left: 2px solid #ffd700 !important;
+  box-shadow: none !important;
+}
+
+/* 🌫️ OVERLAY PARA CERRAR EL MENÚ */
+.mobile-menu-overlay {
+  position: fixed;
+  top: var(--header-height, 60px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 44;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+
+/* 💻 ELEMENTOS DESKTOP - Mostrar por defecto */
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-search {
+  display: flex;
+}
+
+/* 📱 BREAKPOINT PRINCIPAL - ACTIVAR MENÚ MÓVIL */
+@media (max-width: 768px) {
+  /* Ocultar elementos desktop */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .desktop-search {
+    display: none;
+  }
+  
+  .desktop-brand {
+    display: none;
+  }
+  
+  /* Mostrar botón brand móvil */
+  .mobile-brand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Ajustar contenedor en móviles */
+  .brand-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* El menú móvil se muestra cuando está abierto */
+  .mobile-menu {
+    display: none; /* Por defecto oculto */
+  }
+  
+  .mobile-menu.mobile-menu-open {
+    display: block !important; /* Forzar visibilidad cuando está abierto */
+  }
+}
+
+/* 📱📊 ANCHOS ESPECÍFICOS POR DISPOSITIVO */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Tablets - 50% del ancho */
+  .mobile-menu {
+    width: 50vw;
+    min-width: 300px; /* Mínimo para que se vea bien */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Móviles - 80% del ancho */
+  .mobile-menu {
+    width: 80vw;
+    min-width: 280px; /* Mínimo para móviles muy pequeños */
+  }
+}
+
+@media (max-width: 375px) {
+  /* Móviles muy pequeños - 90% del ancho */
+  .mobile-menu {
+    width: 90vw;
+    min-width: 260px; /* Mínimo reducido para pantallas muy pequeñas */
+  }
+}
+
+/* 📱 AJUSTES ADICIONALES PARA MÓVILES PEQUEÑOS */
+@media (max-width: 479px) {
+  .left-group {
+    /* 🔧 Espaciado mínimo entre elementos del header */
+    gap: clamp(6px, 2vw, 12px);
+  }
+
+  .brand img,
+  .logo-img {
+    /* 🏷️ Logo más pequeño */
+    height: clamp(24px, 6vw, 32px);
+  }
+}
+

@@ -1,0 +1,111 @@
+/* ===================================
+   📊 PROGRESS INDICATOR STYLES
+   =================================== */
+
+.progress-indicator {
+  margin-bottom: clamp(16px, 3vw, 24px);
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  position: relative;
+  width: clamp(160px, 25vw, 300px); /* Responsive width que se adapta a la pantalla */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.step-circle {
+  width: clamp(40px, 6vw, 50px);
+  height: clamp(40px, 6vw, 50px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: clamp(14px, 2.5vw, 16px);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border-color);
+  background: var(--panel-1);
+  color: var(--muted);
+}
+
+.step-circle.active {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: white;
+  border-color: var(--accent-1);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+}
+
+.step-circle.completed {
+  background: var(--success, #10B981);
+  color: white;
+  border-color: var(--success, #10B981);
+}
+
+.step-title {
+  margin-top: clamp(8px, 1.5vw, 12px);
+  font-size: clamp(12px, 2vw, 14px);
+  color: var(--muted);
+  text-align: center;
+  font-weight: 500;
+}
+
+.step-item .step-circle.active + .step-title {
+  color: var(--accent-1);
+  font-weight: 600;
+}
+
+/* Sin línea - solo círculos centrados */
+
+.step-line {
+  display: none; /* Ocultar las líneas individuales */
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--panel-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ===================================
+   📱 RESPONSIVE - PROGRESS INDICATOR
+   =================================== */
+
+@media (max-width: 768px) {
+  .steps-container {
+    width: clamp(140px, 20vw, 240px); /* Ajuste específico para tablets */
+  }
+  
+  .step-title {
+    font-size: clamp(11px, 1.8vw, 13px);
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-container {
+    width: clamp(120px, 18vw, 180px); /* Más compacto en móviles */
+  }
+  
+  .step-title {
+    display: none; /* Ocultar títulos en pantallas muy pequeñas */
+  }
+}

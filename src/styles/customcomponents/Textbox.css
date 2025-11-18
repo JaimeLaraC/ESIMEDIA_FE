@@ -1,0 +1,286 @@
+/* ===================================
+   📝 TEXTBOX COMPONENT - Input reutilizable
+   =================================== */
+
+/* 🎨 CONTENEDOR PRINCIPAL DEL TEXTBOX */
+.textbox-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: none;
+}
+
+/* 🎨 ESTILOS PARA EL CONTENEDOR RAÍZ (sin wrapper adicional) */
+.textbox-container-styles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.textbox-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* 🎨 INPUT BASE */
+.textbox-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--panel-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: clamp(10px, 2vw, 14px) 40px clamp(10px, 2vw, 14px) 10px;
+  font-size: clamp(14px, 2.5vw, 15px);
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+/* 🎨 TEXTAREA ESPECÍFICO */
+.textbox-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.creator-form .textbox-container {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.creator-form .textbox-wrapper {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.textbox-input:focus {
+  outline: none;
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.1);
+}
+
+.textbox-input::placeholder {
+  color: var(--muted);
+}
+
+.textbox-input:disabled {
+  background: var(--panel-2);
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 🎨 ESTADOS DE VALIDACIÓN */
+.textbox-input.textbox-valid {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.textbox-input.textbox-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+}
+
+.textbox-input.textbox-neutral {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-color: rgba(156, 163, 175, 0.3);
+}
+
+/* 🎨 LABEL */
+.textbox-label {
+  color: var(--text);
+  font-size: clamp(13px, 2.2vw, 15px);
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.textbox-label-required::after {
+  content: ' *';
+  color: #ef4444;
+}
+
+/* 🎨 BOTÓN DE VISIBILIDAD DE CONTRASEÑA */
+.textbox-password-toggle {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 18px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  z-index: 2;
+}
+
+.textbox-password-toggle:hover {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.textbox-password-toggle:focus {
+  outline: none;
+}
+
+.textbox-password-toggle:active {
+  transform: translateY(-50%) translateY(-50%) scale(0.95);
+}
+
+/* 🎨 ICONOS MATERIAL DESIGN */
+.textbox-icon {
+  color: var(--accent-1);
+  font-size: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* 🎨 TEXTO DE AYUDA/ERROR */
+.textbox-hint {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.textbox-hint.textbox-hint-error {
+  color: #ef4444;
+}
+
+.textbox-hint.textbox-hint-success {
+  color: #10b981;
+}
+
+.textbox-hint.textbox-hint-info {
+  color: var(--muted);
+}
+
+/* ===================================
+   📱 RESPONSIVE - TEXTBOX
+   =================================== */
+
+@media (max-width: 768px) {
+  .textbox-input {
+    padding: clamp(12px, 2.5vw, 16px) 44px clamp(12px, 2.5vw, 16px) 10px;
+    font-size: clamp(15px, 3vw, 16px);
+  }
+
+  .textbox-password-toggle {
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .textbox-input {
+    padding: 12px 44px 12px 10px;
+    font-size: 16px; /* Previene zoom en iOS */
+  }
+
+  .textbox-label {
+    font-size: 14px;
+  }
+
+  .textbox-password-toggle {
+    right: 12px;
+  }
+}
+
+/* ===================================
+   🎯 VARIACIONES ESPECÍFICAS
+   =================================== */
+
+/* Para inputs con icono a la izquierda */
+.textbox-with-icon .textbox-input {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Para inputs de búsqueda */
+.textbox-search .textbox-input {
+  border-radius: 20px;
+  padding-left: 16px;
+  padding-right: 40px;
+}
+
+/* Para inputs numéricos */
+.textbox-number .textbox-input {
+  text-align: center;
+}
+
+/* Para inputs de fecha */
+.textbox-date .textbox-input {
+  cursor: pointer;
+}
+
+/* Para inputs readonly */
+.textbox-readonly .textbox-input {
+  background: var(--panel-2);
+  cursor: not-allowed;
+}
+
+/* ===================================
+   🎯 COMPATIBILIDAD MICROSOFT EDGE
+   =================================== */
+
+/* Desactivar botón por defecto de Edge para mostrar/ocultar contraseña */
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+
+/* ===================================
+   🎯 ESTILOS ESPECÍFICOS PARA UPLOAD BUTTON
+   =================================== */
+
+/* Contenedor del textbox en UploadButton ocupa 95% del upload-form */
+.upload-form .textbox-container.textbox-container-styles.textbox-upload-dark {
+  width: 100%;
+}
+
+/* Background oscuro para textboxes en UploadButton */
+.textbox-upload-dark .textbox-input {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #404040;
+  color: #ffffff;
+}
+
+.textbox-upload-dark .textbox-input:focus {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+.textbox-upload-dark .textbox-input::placeholder {
+  color: #888888;
+}
+
+.textbox-upload-dark .textbox-input:disabled {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: #666666;
+}
+
+.textbox-upload-dark .textbox-label {
+  color: #ffffff;
+}
+
+.textbox-upload-dark .textbox-hint-error {
+  color: #ff6b6b;
+}

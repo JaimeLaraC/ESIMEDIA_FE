@@ -1,0 +1,706 @@
+/* ===================================
+   📋 PLAN PAGE - PÁGINA DE PLANES
+   Basada en los estilos de RegistrationStep2
+   =================================== */
+
+/* Importar sistema unificado de badges */
+@import '../components/Badges.css';
+@import '../components/Cards.css';
+
+.plan-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--header-height) clamp(16px, 5vw, var(--horizontal-padding)) var(--section-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+  /* 🎨 FONDO ESPECÍFICO PARA PLAN PAGE - Corrige el problema del scroll */
+  background:
+    radial-gradient(clamp(800px, 100vw, 1400px) clamp(600px, 150vh, 1500px) at -10% -10%, rgba(90, 160, 255, .14), transparent),
+    radial-gradient(clamp(600px, 80vw, 1200px) clamp(500px, 120vh, 1200px) at 110% -5%, rgba(180, 85, 255, .10), transparent),
+    var(--bg);
+  background-attachment: scroll; /* Importante: permite que el fondo se mueva con el scroll */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Ocultar el fondo fijo global cuando estamos en plan-page */
+.plan-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg); /* Solo color sólido para ocultar el fondo global */
+  z-index: -2; /* Detrás del contenido pero encima del fondo global */
+}
+
+.plan-page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   📝 ENCABEZADO DE LA PÁGINA
+   =================================== */
+
+.plan-page-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 60px);
+  padding: clamp(20px, 4vw, 32px) 0;
+}
+
+.plan-page-header h1 {
+  color: var(--text);
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.plan-page-header p {
+  color: var(--muted);
+  font-size: clamp(16px, 2.5vw, 18px);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===================================
+   📦 GRID DE PLANES - RESPONSIVE
+   =================================== */
+
+.plan-page-content {
+  width: 100%;
+}
+
+.plans-grid {
+  display: grid;
+  gap: clamp(24px, 4vw, 32px);
+  margin-bottom: clamp(60px, 8vw, 80px);
+  
+  /* Mobile: Una columna */
+  grid-template-columns: 1fr;
+}
+
+/* Tablet y Desktop: Dos columnas centradas */
+@media (min-width: 768px) {
+  .plans-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Ajuste especial para tablets en orientación portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .plans-grid {
+    max-width: 600px;
+    gap: clamp(20px, 3vw, 28px);
+  }
+  
+  .plan-card {
+    min-height: 420px;
+  }
+}
+
+/* ===================================
+   🎯 TARJETAS DE PLAN - Usando sistema unificado
+   =================================== */
+
+/* 📋 PLAN CARD - Ahora usa el sistema unificado con .card-plan */
+.plan-card {
+  border-width: 2px; /* Borde más grueso para destacar */
+  border-radius: calc(var(--card-radius-md) + 4px); /* Radio ligeramente mayor */
+}
+
+/* Efectos específicos para plan cards */
+.plan-card:hover {
+  border-color: var(--accent-1);
+}
+
+/* Estados de selección para cards interactivos */
+.card.selected {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.card-premium.selected {
+  border-color: #FFD700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+  background: rgba(255, 215, 0, 0.05);
+}
+
+/* Estados de selección para botones */
+.btn.selected {
+  border-color: var(--accent-1);
+  background: var(--accent-1);
+  color: white;
+}
+
+.btn-premium.selected {
+  background: linear-gradient(135deg, #FF8F00, #FFD700);
+  border-color: #FFD700;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Efectos táctiles para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  .plan-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .plan-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  .plan-btn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* PLAN PREMIUM - Ahora usa .card-premium del sistema unificado */
+.plan-card.premium:hover {
+  /* Hover específico para plan cards premium */
+  box-shadow: 0 16px 45px rgba(0, 229, 255, 0.15);
+}
+
+/* ===================================
+   📋 CONTENIDO DE LAS TARJETAS
+   =================================== */
+
+.plan-header {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 32px);
+}
+
+.plan-header h3 {
+  color: var(--text);
+  font-size: clamp(22px, 4vw, 26px);
+  font-weight: 700;
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.plan-subtitle {
+  color: var(--muted);
+  font-size: clamp(14px, 2.3vw, 16px);
+  margin-bottom: clamp(12px, 2vw, 16px);
+  line-height: 1.5;
+}
+
+.plan-price {
+  color: var(--accent-1);
+  font-size: clamp(24px, 4vw, 28px);
+  font-weight: 700;
+}
+
+.premium-price {
+  background: linear-gradient(135deg, #FFD700, #FF8F00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.plan-card.premium .plan-price {
+  background: linear-gradient(135deg, #FFD700, #FF8F00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* LISTA DE CARACTERÍSTICAS */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(24px, 4vw, 32px) 0;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 2vw, 16px);
+  padding: clamp(8px, 1.5vw, 10px) 0;
+  color: var(--text);
+  font-size: clamp(14px, 2.3vw, 16px);
+  line-height: 1.5;
+}
+
+.feature-icon {
+  color: var(--accent-1);
+  font-weight: 700;
+  font-size: clamp(16px, 2.5vw, 18px);
+  flex-shrink: 0;
+}
+
+.plan-card.premium .feature-icon {
+  color: #FFD700;
+}
+
+/* BOTONES DE PLAN */
+.plan-btn {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: clamp(14px, 2.5vw, 16px) clamp(20px, 4vw, 24px);
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-btn:hover {
+  background: var(--panel-2);
+  border-color: var(--accent-1);
+  transform: translateY(-2px);
+}
+
+.plan-btn.premium {
+  background: linear-gradient(135deg, #FFD700, #FF8F00);
+  color: #000;
+  border-color: #FFD700;
+  font-weight: 700;
+}
+
+.plan-btn.premium:hover {
+  background: linear-gradient(135deg, #FF8F00, #FFD700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+}
+
+.plan-btn.standard:hover {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: white;
+  border-color: var(--accent-1);
+}
+
+/* ===================================
+   ℹ️ INFORMACIÓN ADICIONAL
+   =================================== */
+
+.plan-page-info {
+  margin-top: clamp(40px, 6vw, 60px);
+}
+
+.info-section {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.info-section h3 {
+  color: var(--text);
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 700;
+  margin-bottom: clamp(24px, 4vw, 32px);
+}
+
+.benefits-grid {
+  display: grid;
+  gap: clamp(20px, 3vw, 24px);
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  background: var(--panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3vw, 24px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  border-color: var(--accent-1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.1);
+}
+
+.benefit-icon {
+  font-size: clamp(32px, 5vw, 40px);
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.benefit-item h4 {
+  color: var(--text);
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 600;
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.benefit-item p {
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 15px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===================================
+   ❓ PREGUNTAS FRECUENTES
+   =================================== */
+
+.plan-faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.plan-faq h3 {
+  color: var(--text);
+  font-size: clamp(22px, 3.2vw, 28px);
+  font-weight: 700;
+  margin-bottom: clamp(24px, 4vw, 32px);
+  text-align: center;
+}
+
+.faq-item {
+  background: var(--panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3vw, 24px);
+  margin-bottom: clamp(16px, 2.5vw, 20px);
+}
+
+.faq-item h4 {
+  color: var(--text);
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 600;
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.faq-item p {
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 15px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===================================
+   📱 RESPONSIVE - PLAN PAGE
+   =================================== */
+
+/* 💻 Tablet Landscape - 1024px y abajo */
+@media (max-width: 1024px) {
+  .plan-page-container {
+    max-width: 900px;
+  }
+  
+  .plans-grid {
+    max-width: 700px;
+  }
+  
+  .benefits-grid {
+    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* 📱 Tablet Portrait - 768px y abajo */
+@media (max-width: 768px) {
+  .plan-page {
+    padding: calc(var(--header-height) + 20px) clamp(16px, 4vw, 24px) var(--section-padding);
+  }
+  
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 5vw, 24px);
+    max-width: 500px;
+  }
+  
+  .plan-card {
+    min-height: 380px;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 4vw, 20px);
+  }
+  
+  .plan-page-header h1 {
+    font-size: clamp(28px, 6vw, 36px);
+  }
+  
+  .plan-page-header p {
+    font-size: clamp(15px, 3.5vw, 17px);
+  }
+}
+
+/* 📱 Mobile Large - 640px y abajo */
+@media (max-width: 640px) {
+  .plan-page {
+    padding: calc(var(--header-height) + 16px) clamp(12px, 3vw, 20px) clamp(24px, 5vw, 32px);
+  }
+  
+  .plan-page-header {
+    margin-bottom: clamp(32px, 8vw, 40px);
+  }
+  
+  .plan-card {
+    min-height: 360px;
+    padding: clamp(20px, 5vw, 24px);
+  }
+  
+  .plan-badge {
+    right: clamp(12px, 3vw, 16px);
+    top: -10px;
+  }
+  
+  .info-section h3 {
+    font-size: clamp(20px, 5vw, 26px);
+  }
+}
+
+/* 📱 Mobile Medium - 480px y abajo */
+@media (max-width: 480px) {
+  .plan-page {
+    padding: calc(var(--header-height) + 12px) 16px 24px;
+  }
+  
+  .plan-page-header {
+    padding: clamp(16px, 4vw, 20px) 0;
+    margin-bottom: clamp(24px, 6vw, 32px);
+  }
+  
+  .plans-grid {
+    gap: 20px;
+  }
+  
+  .plan-badge {
+    right: 12px;
+    top: -8px;
+    font-size: clamp(9px, 2.2vw, 11px);
+    padding: clamp(4px, 1vw, 6px) clamp(8px, 2vw, 12px);
+    border-radius: clamp(8px, 2vw, 12px);
+  }
+  
+  .plan-card {
+    padding: clamp(16px, 4vw, 20px);
+    min-height: 340px;
+  }
+  
+  .plan-header {
+    margin-bottom: clamp(20px, 5vw, 24px);
+  }
+  
+  .plan-features {
+    margin-bottom: clamp(20px, 5vw, 24px);
+  }
+  
+  .plan-btn {
+    padding: clamp(12px, 3vw, 14px) clamp(16px, 4vw, 20px);
+    font-size: clamp(13px, 3vw, 15px);
+  }
+  
+  .benefit-item {
+    padding: clamp(16px, 4vw, 20px);
+  }
+}
+
+/* 📱 Mobile Small - 320px y abajo */
+@media (max-width: 320px) {
+  .plan-page {
+    padding: calc(var(--header-height) + 8px) 12px 20px;
+  }
+  
+  .plan-card {
+    padding: 14px;
+    min-height: 320px;
+  }
+  
+  .plan-badge {
+    right: 8px;
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+  
+  .plan-header h3 {
+    font-size: clamp(18px, 5vw, 20px);
+  }
+  
+  .plan-features li {
+    font-size: clamp(13px, 3.5vw, 14px);
+  }
+}
+
+/* ===================================
+   🖥️ DESKTOP LARGE - 1200px y arriba
+   =================================== */
+
+@media (min-width: 1200px) {
+  .plan-page-container {
+    max-width: 1400px;
+  }
+  
+  .plans-grid {
+    max-width: 900px;
+    gap: clamp(32px, 3vw, 40px);
+  }
+  
+  .plan-card {
+    min-height: 450px;
+    padding: clamp(32px, 3vw, 40px);
+  }
+  
+  .benefits-grid {
+    max-width: 1000px;
+    gap: clamp(24px, 2vw, 32px);
+  }
+}
+
+/* ===================================
+   🖥️ ULTRA WIDE - 1600px y arriba
+   =================================== */
+
+@media (min-width: 1600px) {
+  .plan-page {
+    padding: var(--header-height) clamp(40px, 8vw, 120px) var(--section-padding);
+  }
+  
+  .plan-page-container {
+    max-width: 1600px;
+  }
+  
+  .plans-grid {
+    max-width: 1000px;
+  }
+  
+  .benefits-grid {
+    max-width: 1200px;
+  }
+}
+
+/* ===================================
+   📐 ORIENTACIÓN LANDSCAPE EN MÓVILES
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .plan-page {
+    padding: calc(var(--header-height) + 8px) clamp(16px, 4vw, 24px) 16px;
+  }
+  
+  .plan-page-header {
+    margin-bottom: clamp(20px, 4vw, 24px);
+  }
+  
+  .plans-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 3vw, 20px);
+  }
+  
+  .plan-card {
+    min-height: 280px;
+    padding: clamp(16px, 3vw, 20px);
+  }
+  
+  .info-section {
+    margin-bottom: clamp(20px, 4vw, 32px);
+  }
+}
+
+/* ===================================
+   🔧 MEJORAS DE ACCESIBILIDAD RESPONSIVE
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .plan-card,
+  .benefit-item,
+  .faq-item {
+    animation: none;
+    transition: none;
+  }
+  
+  .plan-card:hover,
+  .benefit-item:hover {
+    transform: none;
+  }
+}
+
+/* ===================================
+   🎯 OPTIMIZACIONES ESPECÍFICAS
+   =================================== */
+
+/* Para dispositivos con densidad de píxeles alta */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .plan-badge {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Mejora la legibilidad en pantallas pequeñas con alto contraste */
+@media (max-width: 480px) and (prefers-contrast: high) {
+  .plan-card {
+    border-width: 3px;
+  }
+  
+  .plan-features li {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .benefit-item p {
+    font-size: 15px;
+  }
+}
+
+/* Optimización para modo oscuro en dispositivos móviles */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  .plan-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .plan-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 229, 255, 0.15);
+  }
+}
+
+/* ===================================
+   🎨 ANIMACIONES Y MICROINTERACCIONES
+   =================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plans-grid .plan-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.plans-grid .plan-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.benefits-grid .benefit-item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.benefits-grid .benefit-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.benefits-grid .benefit-item:nth-child(3) {
+  animation-delay: 0.2s;
+}

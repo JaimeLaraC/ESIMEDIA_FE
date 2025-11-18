@@ -1,0 +1,320 @@
+/* ===================================
+   🃏 SISTEMA UNIFICADO DE CARDS
+   =================================== */
+
+/* 🎨 TOKENS DE DISEÑO PARA CARDS */
+:root {
+  /* Dimensiones base */
+  --card-padding-sm: clamp(16px, 3vw, 20px);
+  --card-padding-md: clamp(20px, 4vw, 24px);
+  --card-padding-lg: clamp(24px, 4vw, 32px);
+  --card-padding-xl: clamp(32px, 5vw, 40px);
+
+  --card-radius-sm: clamp(8px, 1vw, 12px);
+  --card-radius-md: clamp(12px, 1.5vw, 16px);
+  --card-radius-lg: clamp(16px, 2vw, 20px);
+
+  --card-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --card-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --card-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --card-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+
+  /* Colores de cards por tipo */
+  --card-bg-default: var(--panel);
+  --card-bg-media: #0f1522;
+  --card-bg-premium: linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(90, 160, 255, 0.08));
+  --card-bg-danger: linear-gradient(135deg, var(--panel), rgba(220, 38, 38, 0.05));
+
+  --card-border-default: var(--border-color);
+  --card-border-media: #22304b;
+  --card-border-premium: var(--accent-2);
+  --card-border-danger: #dc2626;
+
+  /* Hover effects */
+  --card-hover-lift: translateY(-4px);
+  --card-hover-lift-lg: translateY(-6px);
+  --card-hover-scale: scale(0.98);
+  --card-hover-shadow: 0 12px 35px rgba(0, 229, 255, 0.1);
+  --card-hover-shadow-lg: 0 16px 45px rgba(0, 229, 255, 0.15);
+}
+
+/* ===================================
+   🃏 CLASES BASE DE CARDS
+   =================================== */
+
+/* 🔸 CARD BASE - Clase base para todos los cards */
+.card {
+  background: var(--card-bg-default);
+  border: 1px solid var(--card-border-default);
+  border-radius: var(--card-radius-md);
+  box-shadow: var(--card-shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Asegurar que todos los elementos dentro de cards respeten el ancho */
+.card * {
+  box-sizing: border-box;
+}
+
+/* 🔸 CARD CON BADGE - Para cards que tienen badges que sobresalen */
+.card-with-badge {
+  overflow: visible;
+}
+
+/* ===================================
+   📏 MODIFICADORES DE TAMAÑO
+   =================================== */
+
+/* 🔹 CARD PEQUEÑA */
+.card-sm {
+  padding: var(--card-padding-sm);
+  border-radius: var(--card-radius-sm);
+}
+
+/* 🔹 CARD MEDIANA (default) */
+.card-md {
+  padding: var(--card-padding-md);
+  border-radius: var(--card-radius-md);
+}
+
+/* 🔹 CARD GRANDE */
+.card-lg {
+  padding: var(--card-padding-lg);
+  border-radius: var(--card-radius-lg);
+  max-height: 100%;
+}
+
+/* 🔹 CARD EXTRA GRANDE */
+.card-xl {
+  padding: var(--card-padding-xl);
+  border-radius: var(--card-radius-lg);
+}
+
+/* ===================================
+   🎨 MODIFICADORES DE ESTILO
+   =================================== */
+
+/* 🎯 CARD INTERACTIVA - Para cards clickeables */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  transform: var(--card-hover-lift);
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* 📱 EFECTOS TÁCTILES PARA DISPOSITIVOS TOUCH */
+@media (hover: none) and (pointer: coarse) {
+  .card-interactive:hover {
+    transform: none;
+    box-shadow: var(--card-shadow-sm);
+  }
+
+  .card-interactive:active {
+    transform: var(--card-hover-scale);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* 🌟 CARD PREMIUM - Destacada con gradiente */
+.card-premium {
+  background: var(--card-bg-premium);
+  border-color: var(--card-border-premium);
+  position: relative;
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  border-radius: calc(var(--card-radius-md) + 2px);
+  z-index: -1;
+}
+
+.card-premium:hover {
+  transform: var(--card-hover-lift-lg);
+  box-shadow: var(--card-hover-shadow-lg);
+}
+
+/* ⚠️ CARD PELIGRO - Para acciones destructivas */
+.card-danger {
+  border-color: var(--card-border-danger);
+  background: var(--card-bg-danger);
+}
+
+/* 🎬 CARD MEDIA - Para contenido multimedia */
+.card-media {
+  background: var(--card-bg-media);
+  border-color: var(--card-border-media);
+}
+
+.card-media:hover {
+  border-color: var(--accent-2);
+  box-shadow: 0 8px 32px rgba(90, 160, 255, 0.1);
+}
+
+/* ===================================
+   📄 ELEMENTOS INTERNOS DE CARDS
+   =================================== */
+
+/* 🏷️ CARD HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.5vw, 12px);
+}
+
+/* 📝 CARD TITLE */
+.card-title {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* 📄 CARD BODY */
+.card-body {
+  padding: var(--card-padding-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🎯 CARD ACTIONS */
+.card-actions {
+  margin-top: clamp(20px, 3vw, 24px);
+  padding-top: clamp(20px, 3vw, 24px);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: clamp(8px, 1.5vw, 12px);
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   🎨 VARIACIONES ESPECÍFICAS
+   =================================== */
+
+/* 📋 PLAN CARD - Para planes de suscripción */
+.card-plan {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+/* 👨‍🎤 CREATOR CARDS - Para dashboard de creadores */
+/* Usa: className="card card-lg card-creator-info" para información del canal */
+/* Usa: className="card card-lg card-interactive card-creator-upload" para subir contenido */
+/* Usa: className="card card-lg card-creator-metrics" para métricas del canal */
+/* Usa: className="card card-lg card-creator-content" para contenido reciente */
+
+.card-creator-upload {
+  /* Card/botón para subir contenido - con gradiente */
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 229, 255, 0.15);
+  height: 100%;
+  padding: clamp(20px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 2vw, 20px);
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.card-creator-upload::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.card-creator-upload:hover::before {
+  transform: translateX(100%);
+}
+
+.card-creator-upload:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 229, 255, 0.25);
+}
+
+.card-creator-upload:active {
+  transform: translateY(-2px);
+}
+
+/* 📝 REGISTRATION CARD - Para formularios de registro */
+.card-registration {
+  /* Card transparente para formularios de registro */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* ===================================
+   📱 RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .card-lg {
+    padding: var(--card-padding-md);
+  }
+
+  .card-xl {
+    padding: var(--card-padding-lg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card-md {
+    padding: var(--card-padding-sm);
+  }
+
+  .card-lg {
+    padding: var(--card-padding-md);
+  }
+
+  .card-xl {
+    padding: var(--card-padding-lg);
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 16px);
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+}

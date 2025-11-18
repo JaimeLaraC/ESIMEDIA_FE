@@ -1,0 +1,192 @@
+/* ===================================
+   🏷️ SISTEMA UNIFICADO DE BADGES
+   =================================== */
+
+/* 🎨 TOKENS DE DISEÑO PARA BADGES */
+:root {
+  /* Dimensiones base */
+  --badge-padding-xs: clamp(2px, 0.5vw, 4px) clamp(6px, 1vw, 8px);
+  --badge-padding-sm: clamp(4px, 0.8vw, 6px) clamp(8px, 1.5vw, 12px);
+  --badge-padding-md: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
+  --badge-padding-lg: clamp(8px, 1.2vw, 12px) clamp(16px, 2.5vw, 20px);
+  --badge-radius-xs: clamp(6px, 1vw, 8px);
+  --badge-radius-sm: clamp(8px, 1.5vw, 12px);
+  --badge-radius-md: clamp(12px, 2vw, 16px);
+  --badge-radius-lg: clamp(16px, 2.5vw, 20px);
+  --badge-radius-full: 50%;
+  --badge-font-size-xs: clamp(9px, 1.2vw, 11px);
+  --badge-font-size-sm: clamp(10px, 1.5vw, 12px);
+  --badge-font-size-md: clamp(12px, 2vw, 14px);
+  --badge-font-size-lg: clamp(14px, 2.5vw, 16px);
+
+  /* Colores de badges por rol */
+  --badge-user-bg: #6b7280;
+  --badge-creator-bg: #8b5cf6;
+  --badge-admin-bg: #ef4444;
+  --badge-premium-bg: linear-gradient(135deg, #FFD700, #FF8F00);
+  --badge-recommended-bg: linear-gradient(135deg, #FFD700, #FF8F00);
+
+  /* Sombras */
+  --badge-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --badge-shadow-premium: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* ===================================
+   🏷️ CLASES BASE DE BADGES
+   =================================== */
+
+/* 🔸 BADGE BASE - Clase base para todos los badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: default;
+  user-select: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* ===================================
+   📏 MODIFICADORES DE TAMAÑO
+   =================================== */
+
+/* � BADGE EXTRA PEQUEÑO - Para badges minimalistas */
+.badge-xs {
+  padding: var(--badge-padding-xs);
+  border-radius: var(--badge-radius-xs);
+  font-size: var(--badge-font-size-xs);
+}
+
+/* �🔹 BADGE PEQUEÑO - Para badges compactos */
+.badge-sm {
+  padding: var(--badge-padding-sm);
+  border-radius: var(--badge-radius-sm);
+  font-size: var(--badge-font-size-sm);
+}
+
+/* 🔸 BADGE MEDIANO - Tamaño estándar */
+.badge-md {
+  padding: var(--badge-padding-md);
+  border-radius: var(--badge-radius-md);
+  font-size: var(--badge-font-size-md);
+}
+
+/* 🔺 BADGE GRANDE - Para badges destacados */
+.badge-lg {
+  padding: var(--badge-padding-lg);
+  border-radius: var(--badge-radius-lg);
+  font-size: var(--badge-font-size-lg);
+}
+
+/* 🔘 BADGE CIRCULAR - Para badges de rol */
+.badge-circle {
+  border-radius: var(--badge-radius-full);
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  font-size: 8px;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: var(--panel-2);
+  border: 1px solid var(--border-color);
+}
+
+/* ===================================
+   🎨 MODIFICADORES DE COLOR/ROL
+   =================================== */
+
+/* 👤 BADGE DE USUARIO - Color gris */
+.badge-user {
+  background: var(--badge-user-bg);
+  color: white;
+}
+
+/* 🎨 BADGE DE CREATOR - Color púrpura */
+.badge-creator {
+  background: var(--badge-creator-bg);
+  color: white;
+}
+
+/* 👑 BADGE DE ADMIN - Color rojo */
+.badge-admin {
+  background: var(--badge-admin-bg);
+  color: white;
+}
+
+/* ✨ BADGE PREMIUM - Degradado dorado con animación */
+.badge-premium {
+  background: var(--badge-premium-bg);
+  color: #1a1a1a;
+  box-shadow: var(--badge-shadow);
+  animation: badge-shimmer 3s infinite;
+}
+
+/* 🏆 BADGE RECOMENDADO - Degradado dorado-naranja */
+.badge-recommended {
+  background: var(--badge-recommended-bg);
+  color: #000;
+  box-shadow: var(--badge-shadow-premium);
+  position: absolute;
+  top: -12px;
+  right: clamp(16px, 4vw, 24px);
+  font-weight: 700;
+}
+
+/* ===================================
+   ✨ EFECTOS ESPECIALES
+   =================================== */
+
+/* 💫 ANIMACIÓN DE BRILLO PARA BADGES PREMIUM */
+@keyframes badge-shimmer {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+/* ===================================
+   📱 VARIACIONES RESPONSIVE
+   =================================== */
+
+/* Desktop */
+@media (min-width: 768px) {
+  .badge-circle {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+}
+
+/* ===================================
+   🎯 BADGES ESPECÍFICOS POR USO
+   =================================== */
+
+/* 🏷️ BADGE DE PERFIL - Para mostrar roles en perfiles */
+.profile-badge {
+  /* Estilos específicos para badges de perfil si son necesarios */
+}
+
+/* 🏷️ BADGE DE PLAN - Para destacar planes recomendados */
+.plan-badge {
+  /* Estilos específicos para badges de plan si son necesarios */
+}
+
+/* 🏷️ BADGE PREMIUM PEQUEÑO - Para headers y avatares */
+.premium-badge {
+  /* Estilos específicos para badges premium pequeños si son necesarios */
+}
+
+/* 🏷️ BADGE DE ROL CIRCULAR - Para avatares */
+.creator-badge,
+.admin-badge {
+  /* Estilos específicos para badges circulares si son necesarios */
+}

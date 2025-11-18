@@ -1,0 +1,61 @@
+/* CreatorListsPage.css */
+.creator-lists-page {
+  min-height: 100vh;
+  padding: 2rem 0 200px 0;
+}
+
+.creator-lists-page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.creator-lists-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.creator-lists-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.creator-lists-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.creator-lists-section-wrapper {
+  margin-bottom: 3rem;
+}
+
+.creator-lists-add-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.creator-lists-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.creator-lists-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.creator-lists-form-section {
+  margin-top: 2rem;
+}

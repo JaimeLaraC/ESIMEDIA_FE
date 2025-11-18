@@ -1,0 +1,231 @@
+/* ===================================
+   MODAL COMPONENT
+   =================================== */
+
+@import '../components/Buttons.css';
+
+.modal {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 90vw;
+  max-height: 90vh;
+  background: transparent;
+  z-index: 10001; /* Por encima del overlay pero por debajo de las notificaciones */
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  /* Quitamos el backdrop-filter para evitar interferencia con notificaciones */
+}
+
+/* Overlay personalizado con blur */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10000; /* Por debajo de las notificaciones (2147483647) pero por encima del contenido normal */
+}
+
+.modal-content {
+  background: var(--panel);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+/* Modal Sizes */
+.modal-small .modal-content {
+  width: 400px;
+  max-width: 90vw;
+}
+
+.modal-medium .modal-content {
+  width: 600px;
+  max-width: 90vw;
+  overflow: visible;
+  max-height: 85vh;
+}
+
+.modal-large .modal-content {
+  width: 800px;
+  max-width: 90vw;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background: var(--panel-2);
+  color: var(--text);
+  border: none;
+  outline: none;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  max-height: calc(90vh - 80px); /* Espacio para header */
+}
+
+/* Modal medium sin scroll en el contenedor */
+.modal-medium .modal-body {
+  overflow-y: auto;
+  max-height: calc(85vh - 80px);
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal[open] {
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+/* Modal Actions (Buttons) */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.modal-actions button {
+  flex: 1;
+  min-width: 120px;
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.modal-actions .btn-primary {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  color: #fff;
+}
+
+.modal-actions .btn-primary:hover {
+  background: linear-gradient(90deg, #00c5e6, #00d4ff, #0ae);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
+}
+
+.modal-actions .btn-secondary {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border-color);
+}
+
+.modal-actions .btn-secondary:hover {
+  background: var(--panel-3);
+  border-color: rgba(156, 163, 175, 0.5);
+}
+
+.modal-actions .btn-ghost {
+  background: transparent;
+  border: 1px solid #334155;
+  color: var(--text);
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.modal-actions .btn-ghost:hover {
+  border-color: #3f4c6b;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    margin: 16px;
+    max-height: calc(90vh - 32px);
+  }
+
+  .modal-small .modal-content,
+  .modal-medium .modal-content,
+  .modal-large .modal-content {
+    width: calc(100vw - 32px);
+  }
+
+  .modal-header {
+    padding: 16px 20px 12px;
+  }
+
+  .modal-body {
+    padding: 20px;
+    max-height: calc(90vh - 100px); /* Espacio reducido para móviles */
+  }
+
+  /* Botones en columna en móviles */
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+
+/* Loading fallback */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}

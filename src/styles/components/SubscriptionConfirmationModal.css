@@ -1,0 +1,157 @@
+/* ===================================
+   🔄 SUBSCRIPTION CONFIRMATION MODAL - MODAL DE CONFIRMACIÓN DE CAMBIO DE PLAN
+   =================================== */
+
+.subscription-confirmation-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 32px);
+}
+
+/* Resumen del cambio de plan */
+.confirmation-summary {
+  text-align: center;
+}
+
+.confirmation-summary h3 {
+  color: var(--text);
+  font-size: clamp(18px, 3vw, 20px);
+  font-weight: 600;
+  margin-bottom: clamp(20px, 3vw, 24px);
+}
+
+/* Contenedor del cambio de plan */
+.plan-change-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 2vw, 16px);
+  margin: clamp(16px, 3vw, 20px) 0;
+}
+
+/* Cada item del cambio (De/A) */
+.plan-change-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 10px);
+  min-width: 120px;
+}
+
+.change-label {
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 15px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-change-item .plan-badge {
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 600;
+  padding: clamp(8px, 1.5vw, 10px) clamp(16px, 2.5vw, 20px);
+}
+
+/* Flecha de cambio */
+.change-arrow {
+  color: var(--accent-1);
+  font-size: clamp(24px, 4vw, 28px);
+  font-weight: 700;
+  margin: clamp(8px, 1.5vw, 12px) 0;
+  transform: rotate(90deg);
+}
+
+/* Estilo dorado para badges premium */
+.plan-change-item .plan-badge.premium-badge {
+  background: linear-gradient(135deg, #FFD700, #FF8F00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Advertencia de confirmación */
+.confirmation-warning {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: var(--radius);
+  padding: clamp(16px, 3vw, 20px);
+  text-align: center;
+}
+
+.confirmation-warning p {
+  color: var(--text);
+  font-size: clamp(14px, 2.2vw, 15px);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Acciones del modal */
+.modal-actions {
+  display: flex;
+  gap: clamp(12px, 2vw, 16px);
+  justify-content: center;
+  margin-top: clamp(8px, 1.5vw, 12px);
+}
+
+.modal-actions .btn {
+  min-width: 120px;
+  padding: clamp(12px, 2vw, 14px) clamp(20px, 3vw, 24px);
+}
+
+/* ===================================
+   📱 RESPONSIVE - SUBSCRIPTION CONFIRMATION MODAL
+   =================================== */
+
+@media (max-width: 768px) {
+  .subscription-confirmation-content {
+    gap: clamp(20px, 5vw, 24px);
+  }
+
+  .plan-change-summary {
+    gap: clamp(16px, 3vw, 20px);
+  }
+
+  .plan-change-item {
+    min-width: 100px;
+  }
+
+  .change-arrow {
+    font-size: clamp(20px, 5vw, 24px);
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation-summary h3 {
+    font-size: 16px;
+  }
+
+  .plan-change-item .plan-badge {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .change-label {
+    font-size: 12px;
+  }
+
+  .confirmation-warning {
+    padding: 12px;
+  }
+
+  .confirmation-warning p {
+    font-size: 13px;
+  }
+}

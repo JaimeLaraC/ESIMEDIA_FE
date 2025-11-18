@@ -1,0 +1,164 @@
+/* ===================================
+   ERROR 401 PAGE - Página de error 401 (No autorizado)
+   =================================== */
+
+@import '../components/Buttons.css';
+
+.error401-page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error401-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 6vw, 48px);
+  padding: clamp(16px, 4vw, 32px);
+  box-sizing: border-box;
+}
+
+/* Contenido principal centrado */
+.error401-content {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: clamp(32px, 8vw, 64px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 5vw, 40px);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Icono de error */
+.error401-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error401-lock {
+  width: clamp(80px, 15vw, 120px);
+  height: clamp(80px, 15vw, 120px);
+}
+
+.lock {
+  width: 100%;
+  height: 100%;
+}
+
+.lock-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: var(--info, #3b82f6);
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.lock-body {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  stroke-width: 3;
+  stroke: var(--info, #3b82f6);
+  fill: none;
+  animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+}
+
+.lock-shackle {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  stroke-width: 3;
+  stroke: var(--info, #3b82f6);
+  fill: none;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 1s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Contenido de texto */
+.error401-message-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 20px);
+}
+
+.error401-title {
+  font-size: clamp(48px, 12vw, 72px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1;
+}
+
+.error401-description {
+  font-size: clamp(16px, 4vw, 18px);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Botones de acción */
+.error401-actions {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 3vw, 16px);
+  width: 100%;
+  max-width: 280px;
+}
+
+.error401-actions .btn {
+  width: 100%;
+  padding: clamp(12px, 3vw, 16px);
+  font-size: clamp(14px, 3.5vw, 16px);
+  font-weight: 500;
+}
+
+/* Selector de idioma */
+.error401-language-selector {
+  position: absolute;
+  top: clamp(16px, 4vw, 24px);
+  right: clamp(16px, 4vw, 24px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .error401-content {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .error401-actions {
+    gap: 12px;
+  }
+
+  .error401-language-selector {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 20px;
+  }
+}

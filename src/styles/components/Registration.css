@@ -1,0 +1,74 @@
+/* ===================================
+   📝 REGISTRATION CONTAINER STYLES
+   =================================== */
+
+.registration-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 24px) clamp(16px, 4vw, 32px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  padding: clamp(12px, 2vw, 20px) clamp(16px, 3vw, 24px) 0;
+  flex-shrink: 0;
+}
+
+.registration-header h1 {
+  color: var(--text);
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.registration-header p {
+  color: var(--muted);
+  font-size: clamp(13px, 2.2vw, 15px);
+}
+
+.registration-content {
+  width: 100%;
+  flex: 1;
+  overflow: visible;
+}
+
+/* ===================================
+   📱 RESPONSIVE - REGISTRATION
+   =================================== */
+
+@media (max-width: 768px) {
+  .registration-container {
+    max-width: 100%;
+    padding: 12px 16px;
+    min-height: 100vh;
+  }
+  
+  .registration-header {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-container {
+    padding: 8px 12px;
+    min-height: 100vh;
+  }
+  
+  .registration-header h1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  .registration-header p {
+    font-size: 13px;
+  }
+  
+  .registration-header {
+    margin-bottom: 8px;
+  }
+}

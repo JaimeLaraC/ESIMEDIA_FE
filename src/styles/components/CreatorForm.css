@@ -1,0 +1,323 @@
+/* ===================================
+   📝 CREATOR FORM - ESIMedia Design System
+   Panel izquierdo con formulario de registro
+   =================================== */
+
+.creator-form-panel {
+  padding: clamp(24px, 4vw, 40px);
+  position: relative;
+  background: rgba(26, 26, 26, 0.4);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(0, 229, 255, 0.2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-to-home {
+  position: absolute;
+  top: clamp(16px, 2vw, 24px);
+  left: clamp(16px, 2vw, 24px);
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: var(--accent-1);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.back-to-home:hover {
+  background: rgba(0, 229, 255, 0.2);
+  transform: translateX(-2px);
+}
+
+/* ===================================
+   📝 FORM HEADER
+   =================================== */
+
+.creator-form-header {
+  text-align: center;
+  margin-bottom: clamp(20px, 3vw, 32px);
+  padding-top: clamp(20px, 3vw, 40px);
+  flex-shrink: 0;
+}
+
+.creator-form-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.creator-form-subtitle {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   📋 FORM CONTENT
+   =================================== */
+
+.creator-form-content {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(90, 160, 255, 0.2);
+  border-radius: clamp(12px, 2vw, 16px);
+  padding: clamp(16px, 3vw, 24px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  flex: 1;
+}
+
+.creator-form {
+  width: 100%;
+}
+
+/* ===================================
+   🔖 FORM SECTIONS
+   =================================== */
+
+.form-section {
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.form-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: clamp(12px, 2vw, 18px);
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(0, 229, 255, 0.3);
+  display: inline-block;
+}
+
+/* ===================================
+   📝 FORM ELEMENTS
+   =================================== */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 2vw, 16px);
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.form-row:has(.form-group:nth-child(2)) {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Campos que deben ocupar todo el ancho */
+.form-row.full-width,
+.form-row:has(.form-group:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.form-input,
+.form-textarea,
+.combobox-button {
+  padding: 14px 16px;
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  border-radius: var(--radius);
+  background: rgba(26, 26, 26, 0.8);
+  color: var(--text);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 100%; /* Asegurar que ocupe todo el ancho del form-group */
+  box-sizing: border-box; /* Incluir padding y border en el ancho total */
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.combobox-button:focus {
+  outline: none;
+  border-color: var(--accent-1);
+  box-shadow: var(--ring);
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Estados de validación de campos */
+.form-input.neutral,
+.form-textarea.neutral,
+.combobox-button.neutral {
+  border-color: rgba(156, 163, 175, 0.3);
+  box-shadow: none;
+}
+
+.form-input.valid,
+.form-textarea.valid,
+.combobox-button.valid {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.form-input.error,
+.form-textarea.error,
+.combobox-button.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+}
+
+.error-message {
+  font-size: 14px;
+  color: #ef4444;
+  margin-top: 4px;
+}
+
+/* ===================================
+   🚀 SUBMIT SECTION
+   =================================== */
+
+.form-submit-section {
+  margin-top: clamp(32px, 5vw, 48px);
+  text-align: center;
+}
+
+.submit-error {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.form-disclaimer {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Efecto de hover en inputs */
+.form-input:hover,
+.form-textarea:hover,
+.combobox-button:hover {
+  border-color: rgba(0, 229, 255, 0.5);
+}
+
+/* Fix for FormSelect component containers in creator form */
+.creator-form .combobox-container,
+.creator-form .combobox-container-full {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.creator-form .combobox-button {
+  background: rgba(26, 26, 26, 0.8) !important;
+  box-shadow: none !important;
+}
+
+.creator-form .combobox-button:focus,
+.creator-form .combobox-button:hover {
+  background: rgba(26, 26, 26, 0.9) !important;
+}
+
+/* ===================================
+   📱 RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+  .creator-form-panel {
+    padding: clamp(20px, 3vw, 32px);
+  }
+}
+
+@media (max-width: 768px) {
+  /* En móvil: Formulario arriba, Branding abajo */
+  .creator-form-panel {
+    order: 1;
+    padding: clamp(16px, 3vw, 24px);
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  }
+
+  .back-to-home {
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .creator-form-header {
+    padding-top: clamp(40px, 5vw, 50px);
+    margin-bottom: clamp(16px, 2vw, 20px);
+  }
+
+  .creator-form-content {
+    padding: clamp(12px, 2vw, 16px);
+  }
+
+  .form-row:has(.form-group:nth-child(2)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .creator-form-panel {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .creator-form-header {
+    padding-top: 45px;
+    margin-bottom: 12px;
+  }
+
+  .creator-form-content {
+    padding: 12px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .form-section {
+    margin-bottom: 16px;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}

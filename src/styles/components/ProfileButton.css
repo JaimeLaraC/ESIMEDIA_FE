@@ -1,0 +1,225 @@
+/* ===================================
+   👤 PROFILE BUTTON COMPONENT
+   Botón circular de perfil con avatar
+   =================================== */
+
+.profile-button {
+  /* 📐 DIMENSIONES BASE - Responsive con clamp */
+  position: relative;
+  width: clamp(32px, 3vw, 40px);
+  height: clamp(32px, 3vw, 40px);
+  min-width: clamp(32px, 3vw, 40px);
+  max-width: clamp(32px, 3vw, 40px);
+
+  /* 🎨 DISEÑO CIRCULAR */
+  border-radius: 50% !important;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+
+  /* ⚡ INTERACTIVIDAD */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+
+  /* 🔧 FLEXBOX CENTRADO */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  /* 🎯 ACCESIBILIDAD */
+  outline: none !important;
+
+  /* Z-index para badges */
+  z-index: 1;
+}
+
+.profile-button:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+}
+
+.profile-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.profile-button:active {
+  transform: scale(0.98);
+}
+
+/*  IMAGEN DEL AVATAR */
+.profile-button__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  opacity: 1;
+  /* visible by default to avoid hidden avatar when onLoad doesn't fire */
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.profile-button__image--loaded {
+  opacity: 1;
+}
+
+/* 👤 FALLBACK IMAGE - Hereda estilos de .profile-button__image */
+
+/* ===================================
+   📱 RESPONSIVE DESIGN
+   =================================== */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .profile-button {
+    width: clamp(30px, 4vw, 36px);
+    height: clamp(30px, 4vw, 36px);
+    min-width: clamp(30px, 4vw, 36px);
+    max-width: clamp(30px, 4vw, 36px);
+  }
+
+
+
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .profile-button {
+    width: clamp(28px, 6vw, 32px);
+    height: clamp(28px, 6vw, 32px);
+    min-width: clamp(28px, 6vw, 32px);
+    max-width: clamp(28px, 6vw, 32px);
+  }
+
+
+
+}
+
+/* Pantallas muy pequeñas (<=425px) - Círculo perfecto garantizado */
+@media (max-width: 425px) {
+  .profile-button {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    flex-shrink: 0;
+  }
+
+
+
+}
+
+/* ===================================
+   🎯 ESTADOS ESPECIALES
+   =================================== */
+
+/* Cuando el botón está activo (menú abierto) */
+.profile-button[aria-expanded="true"] {
+  background: rgba(0, 229, 255, 0.1);
+  border-color: var(--accent-1);
+  transform: scale(1.02);
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Modo de carga de imagen */
+.profile-button__image:not(.profile-button__image--loaded) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Desactivar animación en dispositivos que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+
+  .profile-button,
+  .profile-button__image {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ===================================
+   🔍 DEBUG Y DESARROLLO
+   Solo visible cuando hay errores
+   =================================== */
+
+.profile-button__image[src=""],
+.profile-button__image:not([src]) {
+  /* No ocultar la imagen, mostrar con opacidad reducida si no hay src */
+  opacity: 0.3;
+}
+
+/* Fallback para imágenes rotas */
+.profile-button__image[alt]:after {
+  content: attr(alt);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  display: none;
+}
+.profile-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Contenedor del avatar circular */
+.profile-button__avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #0f172a; /* color de fondo mientras carga */
+}
+
+/* Imagen del avatar */
+.profile-button__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+.profile-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.profile-button__avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.profile-button__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}

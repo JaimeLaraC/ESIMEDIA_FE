@@ -1,0 +1,374 @@
+/* ===================================
+   📄 COOKIE PAGE - Página de Política de Cookies
+   Diseño profesional y compliant con RGPD/LSSI
+   =================================== */
+
+.cookie-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: var(--header-height) 0 clamp(40px, 6vw, 80px);
+}
+
+.cookie-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+
+/* ===================================
+   🏷️ HEADER SECTION
+   =================================== */
+
+.cookie-page-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 60px);
+  padding-bottom: clamp(24px, 4vw, 32px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cookie-page-header h1 {
+  color: var(--text);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cookie-page-subtitle {
+  color: var(--muted);
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1.6;
+  margin-bottom: clamp(16px, 3vw, 20px);
+}
+
+.cookie-page-updated {
+  color: var(--muted);
+  font-size: clamp(13px, 2vw, 15px);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ===================================
+   📑 CONTENT SECTIONS
+   =================================== */
+
+.cookie-section {
+  margin-bottom: clamp(32px, 5vw, 48px);
+}
+
+.cookie-section h2 {
+  color: var(--text);
+  font-size: clamp(22px, 3.8vw, 28px);
+  font-weight: 600;
+  margin-bottom: clamp(16px, 2.5vw, 20px);
+  border-left: 4px solid var(--accent-1);
+  padding-left: clamp(12px, 2vw, 16px);
+}
+
+.cookie-section h3 {
+  color: var(--text);
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  margin: clamp(24px, 4vw, 32px) 0 clamp(12px, 2vw, 16px) 0;
+}
+
+.cookie-section h4 {
+  color: var(--accent-1);
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 600;
+  margin: 0 0 clamp(8px, 1.5vw, 12px) 0;
+}
+
+.cookie-section p {
+  color: var(--text);
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.6;
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.cookie-section ul {
+  margin-bottom: clamp(16px, 2.5vw, 20px);
+}
+
+.cookie-section li {
+  color: var(--text);
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.6;
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+/* ===================================
+   🏷️ COOKIE CATEGORIES
+   =================================== */
+
+.cookie-category {
+  background: var(--panel-2);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.5vw, 28px);
+  margin-bottom: clamp(24px, 4vw, 32px);
+  border: 1px solid rgba(156, 163, 175, 0.1);
+}
+
+/* ===================================
+   📊 COOKIE TABLES
+   =================================== */
+
+.cookie-table-container {
+  overflow-x: auto;
+  margin: clamp(16px, 2.5vw, 20px) 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+.cookie-table th {
+  background: var(--panel);
+  color: var(--text);
+  font-weight: 600;
+  padding: clamp(12px, 2vw, 16px);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cookie-table td {
+  color: var(--text);
+  padding: clamp(12px, 2vw, 16px);
+  border-bottom: 1px solid rgba(156, 163, 175, 0.1);
+  vertical-align: top;
+}
+
+.cookie-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cookie-table code {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--accent-1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: clamp(12px, 1.8vw, 14px);
+}
+
+/* ===================================
+   ⚖️ LEGAL SECTION
+   =================================== */
+
+.cookie-legal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cookie-legal-list li {
+  background: var(--panel-2);
+  padding: clamp(12px, 2vw, 16px);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+  border-radius: calc(var(--radius) * 0.7);
+  border-left: 4px solid var(--accent-1);
+  position: relative;
+}
+
+.cookie-legal-list li::before {
+  content: "⚖️";
+  position: absolute;
+  left: clamp(8px, 1.5vw, 12px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cookie-legal-list li {
+  padding-left: clamp(32px, 5vw, 40px);
+}
+
+/* ===================================
+   👤 USER RIGHTS SECTION
+   =================================== */
+
+.cookie-rights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(16px, 3vw, 24px);
+  margin: clamp(20px, 3vw, 24px) 0;
+}
+
+.cookie-right-item {
+  background: var(--panel-2);
+  padding: clamp(16px, 3vw, 20px);
+  border-radius: var(--radius);
+  border: 1px solid rgba(156, 163, 175, 0.1);
+  transition: all 0.2s ease;
+}
+
+.cookie-right-item:hover {
+  border-color: rgba(0, 229, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   🌐 BROWSER LINKS SECTION
+   =================================== */
+
+.cookie-browser-links {
+  background: var(--panel-2);
+  padding: clamp(20px, 3.5vw, 24px);
+  border-radius: var(--radius);
+  margin: clamp(16px, 2.5vw, 20px) 0;
+}
+
+.cookie-browser-links ul {
+  list-style: none;
+  padding: 0;
+  margin: clamp(12px, 2vw, 16px) 0 0 0;
+}
+
+.cookie-browser-links li {
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.cookie-browser-links a {
+  color: var(--accent-1);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cookie-browser-links a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+.cookie-browser-links a::before {
+  content: "🔗";
+  font-size: 14px;
+}
+
+/* ===================================
+   📞 CONTACT SECTION
+   =================================== */
+
+.cookie-contact-info {
+  background: linear-gradient(135deg, 
+    rgba(0, 229, 255, 0.03) 0%,
+    rgba(90, 160, 255, 0.03) 100%
+  );
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.5vw, 28px);
+}
+
+.cookie-contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: clamp(12px, 2vw, 16px) 0 0 0;
+}
+
+.cookie-contact-info li {
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+/* ===================================
+   🔙 FOOTER SECTION
+   =================================== */
+
+.cookie-page-footer {
+  text-align: center;
+  margin-top: clamp(48px, 6vw, 64px);
+  padding-top: clamp(24px, 4vw, 32px);
+  border-top: 1px solid var(--border-color);
+}
+
+.cookie-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-1);
+  text-decoration: none;
+  font-size: clamp(14px, 2.2vw, 16px);
+  font-weight: 500;
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 20px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: calc(var(--radius) * 0.8);
+  transition: all 0.2s ease;
+}
+
+.cookie-page-back:hover {
+  background: rgba(0, 229, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ===================================
+   📱 RESPONSIVE - MÓVILES
+   =================================== */
+
+@media (max-width: 768px) {
+  .cookie-page {
+    padding: calc(var(--header-height) + 20px) 0 40px;
+  }
+
+  .cookie-rights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-table-container {
+    font-size: 12px;
+  }
+
+  .cookie-table th,
+  .cookie-table td {
+    padding: 8px 10px;
+  }
+}
+
+/* ===================================
+   ♿ ACCESIBILIDAD
+   =================================== */
+
+.cookie-page-back:focus,
+.cookie-browser-links a:focus {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 2px;
+}
+
+/* Respeto por preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .cookie-page-back,
+  .cookie-right-item,
+  .cookie-browser-links a {
+    transition: none;
+  }
+
+  .cookie-page-back:hover,
+  .cookie-right-item:hover {
+    transform: none;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .cookie-page-header h1 {
+    background: var(--text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .cookie-table {
+    border: 2px solid var(--text);
+  }
+  
+  .cookie-page-back {
+    border: 2px solid currentColor;
+  }
+}

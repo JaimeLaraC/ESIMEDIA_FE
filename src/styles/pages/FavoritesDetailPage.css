@@ -1,0 +1,218 @@
+/* src/styles/pages/FavoritesDetailPage.css */
+
+/* Ícono de favorito en el header */
+.favorites-header-icon {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Estilos para los items de la lista de favoritos */
+.favorites-list-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.favorites-item-index {
+  flex-shrink: 0;
+}
+
+/* Thumbnail container */
+.favorites-thumbnail {
+  width: 120px;
+  height: 68px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorites-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder para thumbnails sin imagen */
+.favorites-thumbnail-placeholder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.favorites-thumbnail-placeholder .material-symbols-outlined {
+  font-size: 32px;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Detalles del item */
+.favorites-item-details {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.favorites-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.favorites-item-title {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.favorites-item-type {
+  display: block;
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.25rem;
+}
+
+.favorites-creator-name {
+  font-size: 0.875rem;
+  color: #999;
+  display: block;
+}
+
+.favorites-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.favorites-duration {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+/* Acciones del item */
+.favorites-item-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.favorites-btn-play-item {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.favorites-btn-play-item:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.favorites-btn-remove {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.favorites-btn-remove:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.favorites-btn-remove .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Botón "Reproducir Todo" */
+.list-play-all-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.list-play-all-btn .material-symbols-outlined {
+  font-size: 1.2em;
+}
+
+/*
+ * Contenedor para los botones (Editar/Guardar/Cancelar) en el header.
+ * Se alinea a la derecha gracias a 'margin-left: auto'.
+ */
+.favorites-actions-group {
+  display: flex;
+  gap: 0.75rem; /* Espacio entre botones */
+  margin-left: auto; /* Empuja el grupo a la derecha */
+}
+
+/* * Sobrescribe el estilo del botón 'list-play-all-btn' 
+ * para quitar el 'margin-left' y que funcione dentro del 'favorites-actions-group'.
+ */
+.list-play-all-btn {
+  margin-left: 0; 
+}
+
+
+/* ===================================
+   🌟 MODO EDICIÓN (DRAG & DROP)
+   =================================== */
+
+/* * El 'mango' (handle) para arrastrar. 
+ * Solo es visible en 'SortableFavoriteItem' cuando isEditing=true.
+ */
+.favorites-drag-handle {
+  cursor: grab; /* Indica que se puede arrastrar */
+  padding: 8px 10px;
+  margin-right: 8px;
+  color: var(--muted, #999); /* Color sutil */
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.favorites-drag-handle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary, #6366F1);
+}
+
+/* * El botón principal que envuelve el contenido.
+ * Se expande para llenar el espacio.
+ */
+.favorites-main-button {
+  flex-grow: 1; 
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Mantiene el mismo 'gap' que 'favorites-list-item' */
+  
+  /* Reseteo de estilos de botón para que parezca invisible */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* * Cuando estamos en modo edición, el cursor del botón principal
+ * NO debe ser 'pointer', para que el 'grab' del mango funcione.
+ */
+.favorites-list-item[data-editing="true"] .favorites-main-button {
+  cursor: default;
+}

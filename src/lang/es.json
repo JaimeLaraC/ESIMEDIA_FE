@@ -1,0 +1,1527 @@
+{
+  "common": {
+    "mockup": "Beta",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "notSpecified": "No especificado",
+    "backTo": "Volver a",
+    "loading": "Cargando...",
+    "premium": "Premium",
+    "content": "Contenido"
+  },
+  "header": {
+    "nav": {
+      "home": "Inicio",
+      "favorites": "Favoritos",
+      "accessContent": "Acceder a contenido",
+      "becomeCreator": "Hazte Creador",
+      "create": "Crear",
+      "analytics": "Métricas",
+      "exclusive": "Exclusivo"
+    },
+    "search": {
+      "placeholder": "Buscar títulos, creadores…",
+      "ariaLabel": "Buscar"
+    },
+    "auth": {
+      "button": "Iniciar Sesión"
+    },
+    "menu": {
+      "toggle": "Abrir menú de navegación",
+      "close": "Cerrar menú de navegación",
+      "mobileNavLabel": "Navegación móvil",
+      "mainNavLabel": "Principal"
+    },
+    "premium": {
+      "upgrade": "Hazte Premium",
+      "ad": {
+        "title": "¡Actualiza a Premium!",
+        "benefit1": "Calidad 4K Ultra HD",
+        "benefit2": "Sin anuncios",
+        "benefit3": "Descargas ilimitadas",
+        "benefit4": "Contenido exclusivo",
+        "upgradeButton": "¡Hazte Premium Ahora!",
+        "disclaimer": "Cancela cuando quieras"
+      }
+    },
+    "userMenu": {
+      "profile": "Mi Perfil",
+      "logout": "Cerrar Sesión",
+      "monetization": "Monetización",
+      "exclusiveContent": "Contenido Exclusivo",
+      "manageSubscription": "Gestionar Suscripción",
+      "controlPanel": "Panel de Control",
+      "metrics": "Métricas",
+      "personalSettings": "Configuración Personal",
+      "switchToUser": "Vista de Usuario"
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "seeAll": "Ver todas las notificaciones",
+      "ariaLabel": "Notificaciones",
+      "adminAriaLabel": "Notificaciones administrativas"
+    },
+    "tooltips": {
+      "profileMenu": "Menú de perfil"
+    },
+    "userTypes": {
+      "user": "Usuario",
+      "basic": "Básico",
+      "premium": "Premium",
+      "creator": "Creador de Contenido",
+      "admin": "Administrador"
+    }
+  },
+  "hero": {
+    "title": {
+      "prefix": "Contenido de ",
+      "accent": "creadores independientes"
+    },
+    "subtitle": "Descubre estrenos antes que nadie, sigue a tus creadores favoritos y construye tu biblioteca. Únete gratis: cancela cuando quieras.",
+    "buttons": {
+      "start": "Empieza ahora",
+      "plans": "Ver planes"
+    },
+    "authenticated": {
+      "welcomePrefix": "Bienvenido, ",
+      "subtitle": "¡Nos alegra verte de nuevo! Explora el contenido de tus creadores favoritos y descubre nuevas historias que te encantarán.",
+      "buttons": {
+        "explore": "Explorar contenido",
+        "profile": "Mi perfil"
+      }
+    }
+  },
+  "media": {
+    "sections": {
+      "recentVideos": "Últimos vídeos añadidos",
+      "recentAudios": "Últimos audios añadidos"
+    }
+  },
+  "auth": {
+    "backToHome": "Volver al inicio",
+    "success": {
+      "login": "Inicio de sesión exitoso"
+    },
+    "welcome": "Bienvenido",
+    "loading": "Iniciando sesión...",
+    "email": "Email",
+    "errors": {
+      "invalidCredentials": "Credenciales inválidas",
+      "emailNotVerified": "Tu email no ha sido verificado. Por favor, revisa tu bandeja de entrada.",
+      "accountBlocked": "Tu cuenta está bloqueada. Contacta al administrador.",
+      "mfaRequired": "Se requiere autenticación de dos factores",
+      "networkError": "Error de conexión. Verifica tu conexión a internet.",
+      "loginFailed": "Error al iniciar sesión. Inténtalo de nuevo."
+    },
+    "branding": {
+      "tagline": "La plataforma de streaming que necesitas",
+      "features": {
+        "exclusive": {
+          "title": "Contenido Exclusivo",
+          "desc": "Acceso a series y películas únicas"
+        },
+        "multiplatform": {
+          "title": "Multiplataforma",
+          "desc": "Disponible en todos tus dispositivos"
+        },
+        "streaming": {
+          "title": "Streaming 4K",
+          "desc": "Calidad ultra HD sin interrupciones"
+        }
+      },
+      "stats": {
+        "creators": "Creadores",
+        "users": "Usuarios",
+        "content": "Contenido"
+      }
+    },
+    "switch": {
+      "haveAccount": "¿Ya tienes cuenta?",
+      "signIn": "Iniciar sesión",
+      "noAccount": "¿No tienes cuenta?",
+      "signUp": "Registrarse"
+    },
+    "buttons": {
+      "login": "Iniciar sesión",
+      "register": "Crea tu cuenta gratis ahora"
+    },
+    "registration": {
+      "steps": {
+        "step1": "Información Personal",
+        "step2": "Selecciona tu Plan",
+        "progress": "Paso {current} de {total}"
+      },
+      "fields": {
+        "email": "Email",
+        "password": "Contraseña",
+        "repeatPassword": "Repetir Contraseña",
+        "firstName": "Nombre",
+        "lastName": "Apellidos",
+        "alias": "Alias (opcional)",
+        "birthDate": "Fecha de Nacimiento",
+        "profileImage": "Imagen de Perfil"
+      },
+      "placeholders": {
+        "email": "tu@email.com",
+        "password": "••••••••",
+        "repeatPassword": "••••••••",
+        "firstName": "Tu nombre",
+        "lastName": "Tus apellidos",
+        "alias": "Nombre de usuario",
+        "birthDate": "DD/MM/YYYY"
+      },
+      "plans": {
+        "standard": {
+          "title": "Cuenta Estándar",
+          "subtitle": "Acceso básico a contenido gratuito",
+          "price": "Gratis",
+          "features": [
+            "Ausgewählte Basis-Inhalte",
+            "Standard-HD-Qualität",
+            "Begrenzte Werbung"
+          ]
+        },
+        "premium": {
+          "title": "Cuenta Premium",
+          "subtitle": "Acceso completo a todo el contenido",
+          "price": "9,99€/Monat",
+          "features": [
+            "Alle verfügbaren Inhalte",
+            "4K Ultra HD-Qualität",
+            "Keine Werbung",
+            "Exklusive Inhalte",
+            "Offline-Downloads",
+            "Prioritäts-Support"
+          ]
+        }
+      },
+      "navigation": {
+        "next": "Siguiente",
+        "previous": "Anterior",
+        "finish": "Crear Cuenta"
+      },
+      "errors": {
+        "passwordMismatch": "Las contraseñas no coinciden",
+        "requiredFields": "Por favor, completa todos los campos obligatorios",
+        "passwordTooWeak": "La contraseña es demasiado débil",
+        "passwordCompromised": "Esta contraseña ha sido comprometida. Usa una diferente.",
+        "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+        "passwordStrengthDefault": "Usa una combinación de letras mayúsculas, minúsculas, números y símbolos",
+        "emailValidation": "Error al validar el correo electrónico."
+      },
+      "passwordHints": {
+        "length": "Longitud entre 8 y 11 caracteres",
+        "mixedCase": "Combinación de mayúsculas y minúsculas",
+        "numbersOrSymbols": "Al menos un número o símbolo",
+        "noObviousPatterns": "Evitar secuencias obvias (123, abc, qwerty, etc.)",
+        "noCommonWords": "Evitar palabras comunes (password, admin, etc.)",
+        "noPersonalData": "Evitar datos personales (nombre, fecha nacimiento, etc.)"
+      }
+    },
+    "password": {
+      "show": "Mostrar contraseña",
+      "hide": "Ocultar contraseña",
+      "changeButton": "Cambiar Contraseña",
+      "checkingHIBP": "Verificando contraseña...",
+      "compromised": "Esta contraseña ha sido comprometida",
+      "error": "Error al cambiar la contraseña",
+      "forgot": "¿Olvidaste tu contraseña?",
+      "mismatch": "Las contraseñas no coinciden",
+      "newTitle": "Nueva Contraseña",
+      "resetMessage": "Tu contraseña será restablecida",
+      "resetTitle": "Restablecer Contraseña",
+      "sendLink": "Enviar enlace de restablecimiento",
+      "weak": "Contraseña demasiado débil"
+    },
+    "forms": {
+      "email": "Email",
+      "password": "Contraseña",
+      "repeatPassword": "Repetir Contraseña",
+      "firstName": "Nombre",
+      "lastName": "Apellidos",
+      "alias": "Alias (opcional)",
+      "birthDate": "Fecha de Nacimiento",
+      "profileImage": "Imagen de Perfil",
+      "placeholders": {
+        "email": "tu@email.com",
+        "password": "••••••••",
+        "repeatPassword": "••••••••",
+        "firstName": "Tu nombre",
+        "lastName": "Tus apellidos",
+        "alias": "Nombre de usuario",
+        "birthDate": "DD/MM/YYYY"
+      }
+    },
+    "verify": {
+      "loading": {
+        "title": "Verificando cuenta...",
+        "message": "Estamos verificando tu cuenta. Por favor, espera un momento."
+      },
+      "success": {
+        "title": "¡Cuenta verificada!",
+        "message": "Tu cuenta ha sido verificada correctamente. Ya puedes disfrutar de todos los servicios de ESIMedia."
+      },
+      "error": {
+        "title": "Error de verificación",
+        "message": "Ha ocurrido un error al verificar tu cuenta. El enlace puede haber expirado o ser inválido."
+      },
+      "goHome": "Ir al inicio",
+      "goLogin": "Iniciar sesión"
+    },
+    "recover": {
+      "title": "Restablecer tu Contraseña",
+      "subtitle": "Ingresa tu nueva contraseña a continuación",
+      "labels": {
+        "newPassword": "Nueva Contraseña",
+        "repeatPassword": "Confirmar Nueva Contraseña"
+      },
+      "placeholders": {
+        "newPassword": "Ingresa tu nueva contraseña",
+        "repeatPassword": "Confirma tu nueva contraseña"
+      },
+      "submit": "Restablecer Contraseña",
+      "success": "Tu contraseña ha sido restablecida exitosamente. Ya puedes iniciar sesión con tu nueva contraseña.",
+      "errors": {
+        "passwordTooWeak": "La contraseña es demasiado débil. Por favor elige una contraseña más fuerte.",
+        "general": "Ocurrió un error al restablecer tu contraseña. Por favor inténtalo de nuevo."
+      }
+    }
+  },
+  "plans": {
+    "title": "Elige tu Plan",
+    "subtitle": "Selecciona el plan que mejor se adapte a tus necesidades y disfruta de ESIMedia",
+    "standard": {
+      "title": "Cuenta Estándar",
+      "subtitle": "Acceso básico a contenido gratuito",
+      "price": "Gratis",
+      "features": {
+        "0": "Acceso a contenido gratuito",
+        "1": "Limitado a 5 horas de reproducción mensual",
+        "2": "Sin anuncios en contenido gratuito"
+      }
+    },
+    "premium": {
+      "title": "Cuenta Premium",
+      "subtitle": "Acceso completo a todo el contenido",
+      "price": "9.99€/mes",
+      "features": {
+        "0": "Acceso ilimitado a todo el contenido",
+        "1": "Contenido exclusivo de creadores",
+        "2": "Sin anuncios",
+        "3": "Descargas offline",
+        "4": "Soporte prioritario",
+        "5": "Calidad 4K Ultra HD"
+      }
+    },
+    "buttons": {
+      "premium": "Comenzar con Premium",
+      "standard": "Comenzar Gratis"
+    },
+    "badge": {
+      "recommended": "Recomendado"
+    },
+    "info": {
+      "whyChoose": {
+        "title": "¿Por qué elegir ESIMedia?",
+        "benefits": {
+          "original": {
+            "title": "Contenido Original",
+            "description": "Series y películas exclusivas de creadores independientes"
+          },
+          "multiplatform": {
+            "title": "Multiplataforma",
+            "description": "Disponible en todos tus dispositivos favoritos"
+          },
+          "noCommitments": {
+            "title": "Sin Compromisos",
+            "description": "Cancela cuando quieras, sin penalizaciones"
+          }
+        }
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes",
+        "questions": {
+          "changePlan": {
+            "question": "¿Puedo cambiar de plan en cualquier momento?",
+            "answer": "Sí, puedes cambiar tu plan cuando quieras desde la configuración de tu cuenta."
+          },
+          "freeTrial": {
+            "question": "¿Hay periodo de prueba gratuito?",
+            "answer": "El plan estándar es completamente gratuito. Para Premium, ofrecemos 7 días de prueba gratuita."
+          }
+        }
+      }
+    }
+  },
+  "creator": {
+    "form": {
+      "title": "Únete como Creador",
+      "subtitle": "Comparte tu pasión y monetiza tu contenido con nuestra plataforma",
+      "backToHome": "Volver al inicio",
+      "sections": {
+        "personalInfo": "Información Personal",
+        "channelInfo": "Información del Canal",
+        "photo": "Foto de Perfil"
+      },
+      "fields": {
+        "email": "Correo electrónico",
+        "firstName": "Nombre",
+        "lastName": "Apellidos",
+        "alias": "Nombre del canal",
+        "channelDescription": "Descripción del canal",
+        "contentType": "Tipo de contenido",
+        "specialty": "Especialidad"
+      },
+      "placeholders": {
+        "email": "tu@email.com",
+        "firstName": "Escribe tu nombre",
+        "lastName": "Escribe tus apellidos",
+        "alias": "Nombre único de tu canal",
+        "channelDescription": "Describe brevemente el contenido de tu canal..."
+      },
+      "photo": {
+        "placeholder": "Foto de perfil",
+        "uploadButton": "Subir foto"
+      },
+      "submitButton": "Enviar solicitud",
+      "submitting": "Enviando...",
+      "disclaimer": "Al enviar este formulario, aceptas nuestros términos y condiciones. Revisaremos tu solicitud y te contactaremos pronto.",
+      "success": "¡Solicitud enviada con éxito! Te contactaremos pronto.",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "invalidEmail": "Formato de email inválido",
+        "submitError": "Error al enviar. Inténtalo de nuevo."
+      }
+    },
+    "branding": {
+      "tagline": "Tu plataforma para crear y monetizar",
+      "features": {
+        "platform": {
+          "title": "Plataforma Completa",
+          "desc": "Todas las herramientas que necesitas para gestionar tu contenido"
+        },
+        "monetization": {
+          "title": "Monetización",
+          "desc": "Genera ingresos directos de tus suscriptores y contenido premium"
+        },
+        "growth": {
+          "title": "Crecimiento",
+          "desc": "Analíticas detalladas y herramientas para hacer crecer tu audiencia"
+        }
+      },
+      "stats": {
+        "creators": "Creadores",
+        "audience": "Audiencia",
+        "earnings": "Ganancias"
+      }
+    },
+    "dashboard": {
+      "title": "Panel de Creador",
+      "welcome": "Gestiona tu contenido y haz crecer tu canal"
+    },
+    "channel": {
+      "info": {
+        "title": "Información del Canal",
+        "edit": "Editar",
+        "save": "Guardar",
+        "cancel": "Cancelar"
+      },
+      "description": "Descripción del canal",
+      "specialty": "Especialidad",
+      "descriptionPlaceholder": "Describe brevemente el contenido de tu canal...",
+      "specialtyPlaceholder": "Ej: Música, Tecnología, Cocina, etc.",
+      "contentType": "Tipo de contenido",
+      "contentTypes": {
+        "video": "Video",
+        "audio": "Audio"
+      },
+      "specialties": {
+        "science": "Ciencia",
+        "gaming": "Gaming",
+        "technology": "Tecnología",
+        "education": "Educación",
+        "entertainment": "Entretenimiento",
+        "music": "Música",
+        "sports": "Deportes",
+        "cooking": "Cocina",
+        "travel": "Viajes",
+        "lifestyle": "Estilo de Vida",
+        "business": "Negocios",
+        "health": "Salud",
+        "art": "Arte",
+        "comedy": "Comedia",
+        "news": "Noticias"
+
+      },
+      "saveSuccess": "¡Información del canal guardada correctamente!",
+      "saveError": "Error al guardar la información del canal. Inténtalo de nuevo."
+    },
+    "upload": {
+      "title": "Subir Nuevo Contenido",
+      "audioDescription": "Selecciona un archivo de audio desde tu dispositivo para subir a tu canal",
+      "selectAudioFile": "Seleccionar Archivo de Audio",
+      "videoUrlLabel": "URL del Video",
+      "videoUrlPlaceholder": "Ingresa URL del video (YouTube, Vimeo, etc.)",
+      "uploadVideo": "Subir Video",
+      "completeInfo": "Completar Información del Contenido",
+      "contentSource": "Fuente del Contenido",
+      "contentInfo": "Información del Contenido",
+      "contentSettings": "Configuración del Contenido",
+      "titlePlaceholder": "Ingresa un título atractivo",
+      "descriptionPlaceholder": "Describe brevemente el contenido...",
+      "description": "Descripción",
+      "maxQuality": "Calidad máxima",
+      "selectQuality": "Seleccionar calidad",
+      "duration": "Duración",
+      "minimumAge": "Edad Mínima",
+      "minimumAgePlaceholder": "Ej: 13, 16, 18 (opcional)",
+      "tags": "Tags",
+      "tagsPlaceholder": "Ej: música, rock, indie",
+      "tagsHint": "Separa las tags con comas, mínimo 1 tag obligatoria",
+      "thumbnailImage": "Imagen de Portada",
+      "thumbnailImageDescription": "Sube una imagen 16:9 para la portada del video",
+      "selectThumbnailImage": "Seleccionar Imagen de Portada",
+      "selectThumbnail": "Seleccionar imagen",
+      "thumbnailHint": "Formato 16:9 recomendado, máximo 5MB",
+      "contentType": "Tipo de Contenido",
+      "standard": "Estándar",
+      "premium": "Premium",
+      "visibility": "Visibilidad",
+      "visible": "Visible",
+      "hidden": "Oculto",
+      "availableUntil": "Disponible Hasta (opcional)",
+      "publish": "Publicar Contenido"
+    },
+    "errors": {
+      "audioOnly": "Solo se permiten archivos de audio",
+      "videoUrlOnly": "Solo se permiten URLs de YouTube y Vimeo",
+      "audioFileNotFound": "No se encontró el archivo de audio"
+    },
+    "metrics": {
+      "title": "Métricas del Canal",
+      "period": "Desde el inicio del canal",
+      "views": "Visualizaciones",
+      "content": "Contenido Publicado",
+      "rating": "Valoración Media"
+    },
+    "content": {
+      "recent": {
+        "title": "Contenido Reciente",
+        "viewAll": "Ver Todo"
+      },
+      "views": "visualizaciones",
+      "hide": "Ocultar contenido",
+      "show": "Mostrar contenido",
+      "edit": "Editar información",
+      "premium": "Contenido premium",
+      "free": "Contenido gratuito"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Panel de Administrador",
+      "welcome": "Gestiona la plataforma y revisa solicitudes de creadores"
+    },
+    "requests": {
+      "title": "Solicitudes de Creador",
+      "approve": "Aprobar",
+      "reject": "Rechazar",
+      "expand": "Expandir",
+      "collapse": "Colapsar",
+      "status": {
+        "pending": "Pendiente",
+        "approved": "Aprobado",
+        "rejected": "Rechazado"
+      }
+    },
+    "users": {
+      "title": "Usuarios",
+      "filter": {
+        "type": "Tipo de Usuario",
+        "status": "Estado",
+        "search": "Buscar usuarios...",
+        "active": "Activo",
+        "blocked": "Bloqueado"
+      },
+      "types": {
+        "estandar": "Estándar",
+        "premium": "Premium",
+        "creador": "Creador",
+        "administrador": "Administrador",
+        "gestor": "Creador"
+      },
+      "status": {
+        "blocked": "Bloqueado"
+      },
+      "created": "Creado:",
+      "lastLogin": "Último acceso:",
+      "never": "Nunca",
+      "id": "ID",
+      "alias": "Alias",
+      "noAlias": "No tiene alias",
+      "roleId": "ID del Rol",
+      "emailVerified": "Email Verificado",
+      "lastPasswordChange": "Último cambio de contraseña",
+      "updatedAt": "Actualizado",
+      "profileImageId": "ID de Foto de Perfil",
+      "yes": "Sí",
+      "no": "No",
+      "auth": {
+        "title": "Seguridad y autenticación",
+        "has2FA": "2FA Habilitado",
+        "has3FA": "3FA Habilitado"
+      },
+      "role": {
+        "user": {
+          "title": "Información de Usuario",
+          "isVip": "Estado cuenta",
+          "birthDate": "Fecha de Nacimiento"
+        },
+        "admin": {
+          "title": "Información de Administrador",
+          "department": "Departamento"
+        },
+        "manager": {
+          "title": "Información de Gestor",
+          "description": "Descripción",
+          "specialty": "Especialidad",
+          "contentType": "Tipo de Contenido",
+          "requestStatus": "Estado de Solicitud"
+        }
+      },
+      "block": "Bloquear",
+      "unblock": "Desbloquear",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "save": "Guardar",
+      "saving": "Guardando...",
+      "delete": "Eliminar",
+      "confirmDelete": "¿Estás seguro de que quieres eliminar este usuario? Esta acción no se puede deshacer.",
+      "error": {
+        "toggleBlock": "Error al cambiar el estado del usuario",
+        "delete": "Error al eliminar el usuario"
+      },
+      "messages": {
+        "editSuccess": "Usuario actualizado correctamente",
+        "editError": "Error al actualizar usuario",
+        "blockSuccess": "Usuario bloqueado correctamente",
+        "blockError": "Error al bloquear usuario",
+        "unblockSuccess": "Usuario desbloqueado correctamente",
+        "unblockError": "Error al desbloquear usuario",
+        "deleteSuccess": "Usuario eliminado correctamente",
+        "deleteError": "Error al eliminar usuario"
+      }
+    },
+    "createAdminForm": {
+      "title": "Crear Nuevo Administrador",
+      "fields": {
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Email",
+        "adminArea": "Área de Administración",
+        "profileImage": "Imagen de Perfil"
+      },
+      "placeholders": {
+        "adminArea": "Ej: Administración General, Gestión de Usuarios, etc."
+      },
+      "buttons": {
+        "submit": "Crear Administrador",
+        "submitting": "Creando..."
+      },
+      "errors": {
+        "emailExists": "Este correo electrónico ya está registrado",
+        "emailCheckFailed": "No se pudo verificar la disponibilidad del email",
+        "formValidation": "Por favor, corrige los errores del formulario",
+        "createSuccess": "Administrador creado correctamente",
+        "createFailed": "Error al crear el administrador",
+        "unknownError": "Error desconocido al crear el administrador"
+      }
+    }
+  },
+  "cookies": {
+    "notice": {
+      "title": "🍪 Uso de Cookies",
+      "description": "Utilizamos cookies propias y de terceros para mejorar tu experiencia, personalizar contenido y analizar el uso de nuestra plataforma. Las cookies nos ayudan a ofrecerte un servicio más personalizado y eficiente.",
+      "legal": "Según la Ley 34/2002 de Servicios de la Sociedad de la Información (LSSI) y el RGPD, necesitamos tu consentimiento para usar cookies no esenciales. Las cookies técnicas son necesarias para el funcionamiento básico del sitio.",
+      "autoAccept": "Al navegar, hacer scroll o continuar usando el sitio, aceptas automáticamente nuestras cookies."
+    },
+    "buttons": {
+      "accept": "Aceptar todas",
+      "reject": "Solo esenciales",
+      "rejectall": "Rechazar todas",
+      "cookiePolicy": "Política de cookies"
+    },
+    "page": {
+      "locale": "es-ES",
+      "title": "Política de Cookies",
+      "subtitle": "Información completa sobre el uso de cookies en ESIMedia y cómo gestionar tus preferencias",
+      "lastUpdated": "Última actualización",
+      "whatAre": {
+        "title": "¿Qué son las cookies?",
+        "description": "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web.",
+        "purpose": "Nos ayudan a recordar tus preferencias y mejorar tu experiencia de navegación, permitiendo que el sitio funcione correctamente."
+      },
+      "weUse": {
+        "title": "Cookies que utilizamos",
+        "description": "En ESIMedia utilizamos diferentes tipos de cookies para mejorar la funcionalidad del sitio, personalizar contenido y analizar el uso de nuestra plataforma."
+      },
+      "categories": {
+        "essential": {
+          "title": "Cookies Esenciales",
+          "description": "Estas cookies son necesarias para el funcionamiento básico del sitio web y no pueden ser desactivadas. No almacenan información personal identificable."
+        },
+        "analytics": {
+          "title": "Cookies Analíticas",
+          "description": "Nos ayudan a entender cómo interactúas con el sitio web proporcionando información sobre las páginas visitadas, el tiempo de permanencia y otros datos estadísticos."
+        }
+      },
+      "legal": {
+        "title": "Base Legal",
+        "gdpr": "Reglamento General de Protección de Datos (RGPD): Garantiza la protección de datos personales en la UE",
+        "lssi": "Ley 34/2002 de Servicios de la Sociedad de la Información (LSSI): Regula el uso de cookies en España",
+        "lopd": "Ley Orgánica de Protección de Datos: Complementa la protección de datos a nivel nacional"
+      },
+      "rights": {
+        "title": "Tus Derechos bajo el RGPD",
+        "description": "Como usuario, tienes los siguientes derechos respecto al tratamiento de tus datos:",
+        "access": {
+          "title": "Derecho de Acceso",
+          "description": "Puedes solicitar información sobre qué datos personales tenemos sobre ti"
+        },
+        "rectification": {
+          "title": "Derecho de Rectificación",
+          "description": "Puedes solicitar la corrección de datos personales inexactos o incompletos"
+        },
+        "erasure": {
+          "title": "Derecho de Supresión",
+          "description": "Puedes solicitar la eliminación de tus datos personales en determinadas circunstancias"
+        },
+        "objection": {
+          "title": "Derecho de Oposición",
+          "description": "Puedes oponerte al tratamiento de tus datos personales en determinadas situaciones"
+        }
+      },
+      "manage": {
+        "title": "Cómo Gestionar las Cookies",
+        "description": "Puedes gestionar las cookies directamente desde tu navegador. Aquí te mostramos cómo:",
+        "browsers": {
+          "title": "Enlaces directos por navegador:",
+          "chrome": "Google Chrome - Gestionar cookies",
+          "firefox": "Mozilla Firefox - Gestionar cookies",
+          "safari": "Safari - Gestionar cookies",
+          "edge": "Microsoft Edge - Gestionar cookies"
+        }
+      },
+      "contact": {
+        "title": "Información de Contacto",
+        "description": "Para cualquier consulta sobre cookies o protección de datos, puedes contactarnos:",
+        "email": "Correo electrónico",
+        "company": "Empresa",
+        "authority": "Autoridad de control",
+        "aepd": "Agencia Española de Protección de Datos (AEPD)"
+      },
+      "table": {
+        "name": "Nombre",
+        "purpose": "Propósito",
+        "duration": "Duración",
+        "type": "Tipo",
+        "typeOwn": "Propia"
+      },
+      "essential": {
+        "language": {
+          "purpose": "Almacena el idioma seleccionado por el usuario",
+          "duration": "1 año"
+        },
+        "consent": {
+          "purpose": "Registra las preferencias de cookies del usuario",
+          "duration": "1 año"
+        }
+      },
+      "analytics": {
+        "ga": {
+          "purpose": "Cookie principal de Google Analytics para distinguir usuarios únicos",
+          "duration": "2 años"
+        },
+        "gaId": {
+          "purpose": "Cookie de Google Analytics específica para esta propiedad",
+          "duration": "2 años"
+        }
+      },
+      "backToHome": "Volver al inicio"
+    }
+  },
+  "profile": {
+    "avatar": {
+      "alt": "Foto de perfil"
+    },
+    "photo": {
+      "placeholder": "Foto de perfil"
+    },
+    "actions": {
+      "editProfileInfo": "Editar información del perfil"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "badges": {
+      "standard": "Estándar",
+      "premium": "Premium",
+      "creator": "Creador",
+      "admin": "Administrador"
+    },
+    "cards": {
+      "profile": {
+        "title": "Información del Perfil",
+        "fields": {
+          "email": "Correo Electrónico",
+          "firstName": "Nombre",
+          "lastName": "Apellidos",
+          "alias": "Alias",
+          "noAlias": "No tiene alias",
+          "birthDate": "Fecha de Nacimiento",
+          "memberSince": "Miembro Desde",
+          "status": "Estado"
+        }
+      },
+      "subscription": {
+        "title": "Gestión de Suscripción",
+        "currentPlan": "Plan Actual",
+        "subscribedSince": "Suscrito desde",
+        "updateSubscription": "Actualizar Suscripción",
+        "modal": {
+          "title": "Cambiar Plan de Suscripción",
+          "currentPlan": "Plan Actual",
+          "changeDescription": "Cambia tu plan de suscripción para acceder a más funciones.",
+          "changeTo": "Cambiar a"
+        },
+        "confirmation": {
+          "title": "Confirmar Cambio de Plan",
+          "summary": "Resumen del Cambio",
+          "from": "De",
+          "to": "A",
+          "warning": "Esta acción cambiará tu plan de suscripción inmediatamente.",
+          "confirm": "Confirmar Cambio",
+          "confirming": "Cambiando..."
+        }
+      },
+      "security": {
+        "title": "Configuración de la Seguridad",
+        "changePassword": "Cambiar contraseña",
+        "changePasswordButton": "Cambiar Contraseña",
+        "startChangePasswordProcess": "Iniciar proceso de cambio de contraseña",
+        "changePasswordDescription": "Te ayudamos evaluando la fortaleza de tu contraseña y guiándote en el proceso de cambio.",
+        "currentPassword": "Contraseña Actual",
+        "newPassword": "Nueva Contraseña",
+        "confirmPassword": "Confirmar Nueva Contraseña",
+        "passwordStrength": {
+          "veryWeak": "Muy débil",
+          "weak": "Débil",
+          "fair": "Regular",
+          "good": "Buena",
+          "strong": "Fuerte"
+        },
+        "twoFactor": {
+          "title": "Autenticación de Dos Factores",
+          "description": "Añade una capa extra de seguridad a tu cuenta usando una aplicación de autenticación",
+          "enable": "Habilitar 2FA",
+          "setup": {
+            "title": "Configurar Autenticación de Dos Factores",
+            "instructions": {
+              "title": "Sigue estos pasos para configurar 2FA:",
+              "step1": "Descarga e instala Google Authenticator (u otra app similar) en tu teléfono",
+              "step2": "Escanea el código QR a continuación con tu app de autenticación",
+              "step3": "Ingresa el código de 6 dígitos de tu app para verificar"
+            },
+            "qrCode": {
+              "title": "Escanear Código QR",
+              "alt": "Código QR para configuración de Google Authenticator"
+            },
+            "manual": {
+              "title": "O ingresa este código manualmente:",
+              "copy": "Copiar al portapapeles"
+            },
+            "continue": "Continuar a verificación"
+          },
+          "verify": {
+            "title": "Verificar Configuración",
+            "description": "Ingresa el código de 6 dígitos de tu app de autenticación para completar la configuración.",
+            "codeLabel": "Código de Verificación",
+            "confirm": "Habilitar 2FA",
+            "verifying": "Verificando...",
+            "back": "Volver a configuración"
+          },
+          "errors": {
+            "codeRequired": "Por favor ingresa el código de verificación",
+            "invalidCode": "El código debe tener 6 dígitos",
+            "verificationFailed": "Error al verificar el código. Por favor inténtalo de nuevo."
+          },
+          "success": {
+            "enabled": "¡La autenticación de dos factores ha sido habilitada exitosamente!"
+          }
+        },
+        "threeFactor": {
+          "title": "Tercer Factor de Autenticación",
+          "description": "Recibe códigos de verificación por email para mayor seguridad",
+          "enable": "Habilitar 3FA",
+          "setup": {
+            "title": "Configurar Tercer Factor de Autenticación",
+            "emailLabel": "Tu Dirección de Email",
+            "emailDescription": "Los códigos de verificación serán enviados a esta dirección de email",
+            "sendCode": "Enviar Código de Verificación",
+            "sending": "Enviando...",
+            "codeSent": "¡Código enviado! Revisa tu email."
+          },
+          "verify": {
+            "title": "Ingresa el Código de Verificación",
+            "description": "Ingresa el código de 6 dígitos enviado a tu email para completar la configuración.",
+            "codeLabel": "Código de Verificación",
+            "confirm": "Habilitar 3FA",
+            "verifying": "Verificando...",
+            "resend": "Reenviar Código",
+            "resending": "Reenviando..."
+          },
+          "errors": {
+            "codeRequired": "Por favor ingresa el código de verificación",
+            "invalidCode": "El código debe tener 6 dígitos",
+            "verificationFailed": "Error al verificar el código. Por favor inténtalo de nuevo.",
+            "sendFailed": "Error al enviar el código de verificación. Por favor inténtalo de nuevo.",
+            "emailRequired": "La dirección de email es obligatoria"
+          },
+          "success": {
+            "enabled": "¡El tercer factor de autenticación ha sido habilitado exitosamente!",
+            "codeResent": "El código de verificación ha sido reenviado a tu email"
+          }
+        }
+      },
+      "cancellation": {
+        "title": "Cancelación de Cuenta",
+        "description": "Eliminar permanentemente tu cuenta y todos los datos asociados",
+        "warning": "Esta acción no se puede deshacer",
+        "deleteAccount": "Eliminar Cuenta",
+        "confirmDeleteTitle": "¿Estás seguro?",
+        "confirmDeleteMessage": "Eliminar tu cuenta es permanente",
+        "confirmDeleteDescription": "Una vez que elimines tu cuenta, no hay vuelta atrás. Por favor, piénsalo bien.",
+        "consequence1": "Perderás acceso a todos tus datos y contenido",
+        "consequence2": "Se eliminarán todas tus publicaciones y comentarios",
+        "consequence3": "Perderás tu historial de interacciones",
+        "consequence4": "No podrás recuperar tu cuenta ni tus datos",
+        "finalWarning": "¿Realmente quieres continuar?",
+        "keepAccount": "Mantener mi cuenta",
+        "confirmDelete": "Sí, eliminar cuenta",
+        "passwordRequiredTitle": "Confirmar eliminación",
+        "passwordRequiredMessage": "Para proceder con la eliminación de tu cuenta, por favor ingresa tu contraseña actual.",
+        "enterPassword": "Contraseña actual",
+        "passwordPlaceholder": "Ingresa tu contraseña",
+        "deleteAccountPermanently": "Eliminar cuenta permanentemente",
+        "deleting": "Eliminando cuenta..."
+      }
+    }
+  },
+  "toast": {
+    "success": {
+      "profileUpdated": "¡Has actualizado tu información de perfil!",
+      "passwordChanged": "¡Tu contraseña ha sido cambiada!",
+      "registrationCompleted": "¡Bienvenido! Revisa tu email para verificar tu cuenta.",
+      "accountDeleted": "¡Hasta pronto! Tu cuenta ha sido eliminada. ¡Esperamos verte pronto!",
+      "contentUploading": "¡Estamos verificando tu contenido! Esto puede tomar unos momentos...",
+      "subscriptionChanged": "¡Plan de suscripción actualizado!"
+    },
+    "error": {
+      "profileSaveFailed": "¡Ups! No se ha podido actualizar tu información de perfil",
+      "logoutFailed": "¡Ups! No se pudo cerrar la sesión. Inténtalo de nuevo.",
+      "registrationFailed": "¡Oh no! No se pudo completar el registro.",
+      "videoVerificationFailed": "¡Vaya! Parece que tu video ha tenido un problema durante la verificación. Revisa el archivo e inténtalo de nuevo.",
+      "audioVerificationFailed": "¡Uy! Tu archivo de audio no ha podido ser verificado correctamente. Comprueba que el archivo esté en buen estado.",
+      "subscriptionChangeFailed": "Error al cambiar el plan de suscripción"
+    }
+  },
+  "hints": {
+    "email": {
+      "required": "El correo electrónico es obligatorio.",
+      "minLength": "El correo debe tener entre 6 y 100 caracteres.",
+      "maxLength": "El correo debe tener entre 6 y 100 caracteres.",
+      "pattern": "Introduce un correo electrónico válido."
+    },
+    "password": {
+      "required": "La contraseña es obligatoria."
+    },
+    "repeatPassword": {
+      "required": "Debes repetir la contraseña.",
+      "mismatch": "Las contraseñas no coinciden."
+    },
+    "firstName": {
+      "required": "El nombre es obligatorio.",
+      "minLength": "El nombre debe tener entre 3 y 50 caracteres.",
+      "maxLength": "El nombre debe tener entre 3 y 50 caracteres.",
+      "pattern": "El nombre solo puede contener letras, espacios, guiones y apóstrofes."
+    },
+    "lastName": {
+      "required": "Los apellidos son obligatorios.",
+      "minLength": "Los apellidos deben tener entre 3 y 50 caracteres.",
+      "maxLength": "Los apellidos deben tener entre 3 y 50 caracteres.",
+      "pattern": "Los apellidos solo pueden contener letras, espacios, guiones y apóstrofes."
+    },
+    "alias": {
+      "minLength": "El alias debe tener entre 3 y 12 caracteres.",
+      "maxLength": "El alias debe tener entre 3 y 12 caracteres.",
+      "pattern": "El alias debe empezar y terminar con letra o número, sin guiones consecutivos.",
+      "noConsecutive": "El alias no puede contener guiones o guiones bajos consecutivos."
+    },
+    "birthDate": {
+      "required": "La fecha de nacimiento es obligatoria.",
+      "future": "La fecha de nacimiento no puede ser en el futuro.",
+      "tooYoung": "Debes tener al menos 4 años.",
+      "tooOld": "La fecha de nacimiento no puede ser de hace más de 120 años."
+    },
+    "channelDescription": {
+      "required": "La descripción del canal es obligatoria.",
+      "minLength": "La descripción debe tener al menos 10 caracteres.",
+      "maxLength": "La descripción no puede superar 500 caracteres."
+    },
+    "contentType": {
+      "required": "Selecciona el tipo de contenido.",
+      "invalid": "Tipo de contenido no válido."
+    },
+    "specialty": {
+      "required": "Selecciona una especialidad."
+    },
+    "photo": {
+      "required": "Debes subir una foto."
+    },
+    "contentTitle": {
+      "required": "El título es obligatorio",
+      "minLength": "El título debe tener al menos 3 caracteres",
+      "maxLength": "El título no puede superar 100 caracteres"
+    },
+    "contentDescription": {
+      "minLength": "La descripción debe contener al menos 10 caracteres si se proporciona",
+      "maxLength": "La descripción no puede superar 1000 caracteres"
+    },
+    "contentDuration": {
+      "required": "La duración es obligatoria",
+      "pattern": "Formato de duración inválido (HH:MM:SS o MM:SS)"
+    },
+    "contentMinimumAge": {
+      "range": "La edad mínima debe ser un número entero entre 0 y 99"
+    },
+    "contentThumbnail": {
+      "required": "La imagen thumbnail es obligatoria",
+      "type": "Solo se permiten archivos de imagen",
+      "size": "La imagen no puede superar los 5MB"
+    },
+    "contentAvailableUntil": {
+      "future": "La fecha debe ser posterior a hoy"
+    },
+    "contentTags": {
+      "required": "Mínimo una tag es requerida",
+      "minTags": "Debes proporcionar al menos una tag",
+      "maxTags": "No puedes tener más de 10 tags",
+      "tagMinLength": "Cada tag debe tener al menos 2 caracteres",
+      "tagMaxLength": "Cada tag no puede superar 20 caracteres",
+      "tagPattern": "Las tags solo pueden contener letras, números y espacios"
+    },
+    "department": {
+      "required": "El departamento/área es obligatorio",
+      "minLength": "El departamento/área debe tener al menos 3 caracteres",
+      "maxLength": "El departamento/área no puede superar 100 caracteres"
+    },
+    "currentPassword": {
+      "required": "La contraseña actual es obligatoria"
+    },
+    "newPassword": {
+      "required": "La nueva contraseña es obligatoria"
+    },
+    "videoUrl": {
+      "required": "La URL del video es obligatoria",
+      "invalid": "Solo se permiten URLs de YouTube y Vimeo"
+    },
+    "listName": {
+      "required": "El nombre de la lista es obligatorio",
+      "minLength": "El nombre de la lista debe tener al menos 3 caracteres",
+      "maxLength": "El nombre de la lista no puede superar 100 caracteres"
+    },
+    "listDescription": {
+      "maxLength": "La descripción no puede superar 500 caracteres"
+    }
+  },
+  "play": {
+    "views": "visualizaciones",
+    "ratings": "valoraciones",
+    "yourRating": "Tu Valoración",
+    "rateWith": "Valorar con",
+    "stars": "estrellas",
+    "youRated": "Valoraste con",
+    "recommendations": "Recomendaciones",
+    "playlistItems": "Elementos de la Lista"
+  },
+  "playlist": {
+    "title": "Mis Listas",
+    "subtitle": "Todas tus colecciones de contenido en un solo lugar.",
+    "createNew": "Crear Nueva Lista",
+    "loading": "Cargando tus listas...",
+    "loadingDetail": "Cargando lista...",
+    "empty": {
+      "title": "No se encontraron listas",
+      "subtitle": "Aún no has creado ninguna lista. ¡Comienza creando una!"
+    },
+    "lastUpdate": "Última actualización:",
+    "item": "elemento",
+    "items": "elementos",
+    "timeAgo": {
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "daysAgo": "Hace {count} días",
+      "weeksAgo": "Hace {count} semana(s)",
+      "monthsAgo": "Hace {count} mes(es)"
+    },
+    "notFound": {
+      "title": "Lista no encontrada",
+      "subtitle": "La lista que buscas no existe o fue eliminada"
+    },
+    "myLists": "Mis Listas",
+    "visibility": {
+      "private": "Privada",
+      "restricted": "Restringida",
+      "unlisted": "No listada",
+      "public": "Pública"
+    },
+    "playList": "Reproducir Lista",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "content": "Contenido",
+    "add": "Añadir",
+    "emptyList": {
+      "title": "Esta lista está vacía",
+      "subtitle": "Agrega contenido para comenzar a organizar"
+    },
+    "success": {
+      "updated": "Lista actualizada correctamente",
+      "deleted": "Lista eliminada correctamente",
+      "removed": "Contenido eliminado de la lista"
+    },
+    "error": {
+      "load": "Error al cargar la lista",
+      "update": "Error al actualizar la lista",
+      "delete": "Error al eliminar la lista",
+      "remove": "Error al eliminar contenido"
+    },
+    "confirmDelete": "¿Estás seguro de eliminar la lista \"{name}\"?",
+    "contentTypes": {
+      "video": "Video",
+      "audio": "Audio",
+      "content": "Contenido"
+    }
+  },
+  "profilePage": {
+    "loading": "Cargando perfil...",
+    "error": "Error al cargar los datos del perfil"
+  },
+  "creatorPage": {
+    "loading": "Cargando información del creador..."
+  },
+  "adminPage": {
+    "loading": "Cargando información del administrador..."
+  },
+  "addContentPage": {
+    "loading": "Cargando contenido disponible...",
+    "listNotFound": "Lista no encontrada",
+    "backToMyLists": "Volver a Mis Listas",
+    "title": "Añadir Contenido",
+    "subtitle": "Explora y selecciona el contenido que deseas añadir a tu lista.",
+    "searchPlaceholder": "Buscar por título, artista o palabra clave...",
+    "allGenres": "Todos los géneros",
+    "genres": {
+      "music": "Música",
+      "action": "Acción",
+      "comedy": "Comedia",
+      "drama": "Drama",
+      "documentary": "Documental"
+    },
+    "sortBy": {
+      "recent": "Recientes",
+      "mostViewed": "Más Vistos",
+      "bestRated": "Mejor Valorados"
+    },
+    "noContentFound": "No se encontró contenido disponible",
+    "contentTypes": {
+      "video": "Video",
+      "audio": "Música",
+      "content": "Contenido"
+    },
+    "selection": {
+      "item": "elemento",
+      "items": "elementos",
+      "selected": "seleccionado",
+      "selectedPlural": "seleccionados"
+    },
+    "addToList": "Añadir a la lista",
+    "errors": {
+      "loadContent": "Error al cargar el contenido disponible",
+      "addToList": "Error al añadir contenido a la lista"
+    },
+    "success": {
+      "addedToList": "contenido(s) añadido(s) a la lista"
+    }
+  },
+  "addToListModal": {
+    "title": "Añadir a Lista",
+    "titleWithContent": "Añadir a lista: {{contentTitle}}",
+    "selectListLabel": "Seleccionar una lista",
+    "selectListPlaceholder": "Elige una lista o crea una nueva",
+    "loadingLists": "Cargando tus listas...",
+    "newListOption": "Crear nueva lista",
+    "newListDescription": "Crear una nueva lista personalizada",
+    "createNewList": "Crear Nueva Lista",
+    "nameLabel": "Nombre de la Lista",
+    "namePlaceholder": "Ingresa el nombre de la lista",
+    "descriptionLabel": "Descripción",
+    "descriptionPlaceholder": "Describe tu lista (opcional)",
+    "cancel": "Cancelar",
+    "addToList": "Añadir a Lista",
+    "adding": "Añadiendo...",
+    "errors": {
+      "selectList": "Por favor selecciona una lista"
+    },
+    "defaultVisibilityComment": "Visibilidad por defecto para listas creadas por usuarios"
+  },
+  "createListModal": {
+    "title": "Crear Nueva Lista",
+    "closeAriaLabel": "Cerrar",
+    "nameLabel": "Nombre de la Lista",
+    "namePlaceholder": "Ej: Mis películas favoritas de 2025",
+    "descriptionLabel": "Descripción",
+    "descriptionPlaceholder": "Describe de qué trata tu lista... (opcional)",
+    "visibilityLabel": "Visibilidad (Se asignará automáticamente)",
+    "visibilityHelp": "La visibilidad se asignará automáticamente según tu rol:",
+    "visibilityManager": "• Gestores de contenido: Listas públicas (todos pueden verlas)",
+    "visibilityUser": "• Usuarios: Listas privadas (solo tú puedes verlas)",
+    "contentLabel": "Seleccionar Contenido",
+    "loadingContent": "Cargando contenido disponible...",
+    "noContent": "No hay contenido disponible",
+    "noContentHelp": "No hay contenido visible en la plataforma para agregar a una lista",
+    "selectAtLeastOne": "Selecciona al menos 1 contenido para la lista",
+    "contentSelected": "contenido seleccionado",
+    "contentsSelected": "contenidos seleccionados",
+    "cancel": "Cancelar",
+    "creating": "Creando...",
+    "createList": "Crear Lista",
+    "errors": {
+      "loadContents": "Error al cargar contenidos",
+      "loadAvailableContent": "Error al cargar el contenido disponible",
+      "nameRequired": "El nombre es obligatorio",
+      "nameTooLong": "El nombre no puede exceder 100 caracteres",
+      "descriptionTooLong": "La descripción no puede exceder 500 caracteres",
+      "selectContent": "Debes seleccionar al menos 1 contenido"
+    },
+    "success": {
+      "listCreated": "¡Lista creada exitosamente!"
+    }
+  },
+  "list": {
+    "addToList": "Añadir a la lista"
+  },
+  "error": {
+    "title": "Error",
+    "contentNotFound": "Contenido no encontrado",
+    "contentLoadFailed": "No se ha podido cargar el contenido indicado. Tal vez no exista o se haya borrado."
+  },
+  "favorite": {
+    "added": "Añadido a favoritos",
+    "removed": "Eliminado de favoritos",
+    "error": "Error al actualizar favoritos",
+    "addTitle": "Añadir a favoritos",
+    "removeTitle": "Eliminar de favoritos",
+    "label": "Favorito"
+  },
+  "search": {
+    "allContent": {
+      "title": "Todo el contenido"
+    },
+    "resultsFor": "Resultados para",
+    "resultSingular": "resultado encontrado",
+    "resultPlural": "resultados encontrados",
+    "noQuery": {
+      "title": "Buscar contenido",
+      "description": "Usa la barra de búsqueda para encontrar audio y video"
+    },
+    "error": {
+      "generic": "Error al buscar contenido",
+      "network": "Ups, ha habido un error en tu búsqueda. Inténtalo de nuevo."
+    },
+    "empty": {
+      "title": "No se encontraron resultados",
+      "description": "No encontramos ningún contenido que coincida con tu búsqueda",
+      "suggestions": "Sugerencias para mejorar tu búsqueda:",
+      "tip1": "Verifica la ortografía de las palabras",
+      "tip2": "Intenta con términos más generales o diferentes",
+      "tip3": "Usa palabras clave relacionadas con el contenido"
+    },
+    "filters": {
+      "title": "Filtros",
+      "reset": "Limpiar",
+      "type": "Tipo de contenido",
+      "all": "Todos",
+      "audio": "Audio",
+      "video": "Video",
+      "premium": "Tipo de acceso",
+      "vipOnly": "Solo Premium",
+      "sortBy": "Ordenar por",
+      "duration": "Duración"
+    },
+    "sort": {
+      "relevance": "Relevancia",
+      "date": "Fecha",
+      "rating": "Valoración",
+      "views": "Vistas"
+    },
+    "creator": "Creador",
+    "pagination": {
+      "label": "Paginación",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "page": "Página"
+    }
+  },
+
+  "confirmationModal": {
+    "deleteUser": {
+      "title": "Eliminar Usuario",
+      "message": "¿Estás seguro de que quieres eliminar al usuario",
+      "messageEnd": "? Esta acción no se puede deshacer.",
+      "description": "Esta acción no se puede deshacer. La cuenta del usuario y todos los datos asociados serán eliminados permanentemente.",
+      "confirmButton": "Eliminar Usuario",
+      "cancelButton": "Cancelar"
+    },
+    "blockUser": {
+      "title": "Bloquear Usuario",
+      "message": "¿Estás seguro de que quieres bloquear al usuario",
+      "messageEnd": "?",
+      "confirmButton": "Bloquear"
+    },
+    "unblockUser": {
+      "title": "Desbloquear Usuario", 
+      "message": "¿Estás seguro de que quieres desbloquear al usuario",
+      "messageEnd": "?",
+      "confirmButton": "Desbloquear"
+    },
+    "loading": "Eliminando...",
+    "error": "Error al eliminar usuario"
+  },
+  "errors": {
+    "403": {
+      "title": "403",
+      "subtitle": "Acceso denegado",
+      "message": "Tu cuenta está bloqueada o no tienes permisos para acceder a esta función. Si crees que esto es un error, contacta al administrador.",
+      "goHome": "Ir al inicio",
+      "goBack": "Volver"
+    },
+    "401": {
+      "title": "401",
+      "message": "Tu sesión ha expirado o no tienes permisos para acceder a esta página. Por favor inicia sesión para continuar.",
+      "loginButton": "Iniciar sesión",
+      "homeButton": "Ir al inicio"
+    },
+    "404": {
+      "title": "404",
+      "subtitle": "Página no encontrada",
+      "message": "La página que buscas no existe o ha sido movida. Verifica la URL o regresa a la página principal.",
+      "goHome": "Ir al inicio",
+      "goBack": "Volver"
+    }
+  },
+  "403": {
+    "title": "403",
+    "subtitle": "Acceso denegado",
+    "message": "Tu cuenta está bloqueada o no tienes permisos para acceder a esta función. Si crees que esto es un error, contacta al administrador.",
+    "goHome": "Ir al inicio",
+    "goBack": "Volver"
+  },
+  "401": {
+    "title": "401",
+    "message": "Tu sesión ha expirado o no tienes permisos para acceder a esta página. Por favor inicia sesión para continuar.",
+    "loginButton": "Iniciar sesión",
+    "homeButton": "Ir al inicio"
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "message": "La página que buscas no existe o ha sido movida. Verifica la URL o regresa a la página principal.",
+    "goHome": "Ir al inicio",
+    "goBack": "Volver"
+  },
+  "myLists": {
+    "title": "Mis Listas",
+    "subtitle": "Gestiona tus colecciones personales de contenido",
+    "loading": "Cargando tus listas...",
+    "empty": {
+      "title": "Aún no tienes listas",
+      "subtitle": "Crea tu primera lista para organizar tu contenido favorito"
+    },
+    "table": {
+      "name": "Nombre",
+      "items": "Elementos",
+      "lastUpdate": "Última Actualización",
+      "actions": "Acciones"
+    },
+    "item": "elemento",
+    "items": "elementos",
+    "timeAgo": {
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "daysAgo": "Hace {count} días",
+      "weeksAgo": "Hace {count} semanas",
+      "monthsAgo": "Hace {count} meses"
+    },
+    "actions": {
+      "edit": "Editar lista",
+      "delete": "Eliminar lista"
+    },
+    "deleteSuccess": "Lista eliminada correctamente",
+    "deleteError": "Error al eliminar la lista",
+    "deleteModal": {
+      "title": "Eliminar Lista",
+      "message": "¿Estás seguro de que quieres eliminar esta lista? Esta acción no se puede deshacer.",
+      "confirm": "Eliminar",
+      "cancel": "Cancelar"
+    },
+    "privateList": "Lista Privada",
+    "publicList": "Lista Pública"
+  },
+  "publicLists": {
+    "title": "Listas Públicas",
+    "subtitle": "Explora listas creadas por creadores de contenido",
+    "loading": "Cargando listas públicas...",
+    "empty": {
+      "title": "No hay listas públicas disponibles",
+      "subtitle": "No hay listas públicas disponibles en este momento"
+    },
+    "table": {
+      "name": "Nombre",
+      "creator": "Creador",
+      "items": "Elementos",
+      "lastUpdate": "Última Actualización",
+      "actions": "Acciones"
+    },
+    "creator": "Creador",
+    "item": "elemento",
+    "items": "elementos",
+    "timeAgo": {
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "daysAgo": "Hace {count} días",
+      "weeksAgo": "Hace {count} semanas",
+      "monthsAgo": "Hace {count} meses"
+    },
+    "actions": {
+      "view": "Ver"
+    }
+  },
+  "creatorLists": {
+    "title": "Gestión de Listas Públicas",
+    "subtitle": "Administra todas las listas públicas de la plataforma",
+    "publicListsTitle": "Listas Públicas",
+    "addNewList": "Crear Nueva Lista Pública",
+    "loading": "Cargando listas públicas...",
+    "empty": {
+      "title": "No hay listas públicas",
+      "subtitle": "Aún no se han creado listas públicas en la plataforma"
+    },
+    "table": {
+      "name": "Nombre",
+      "creator": "Creador",
+      "items": "Elementos",
+      "lastUpdate": "Última Actualización",
+      "actions": "Acciones"
+    },
+    "creator": "Creador",
+    "item": "elemento",
+    "items": "elementos",
+    "timeAgo": {
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "daysAgo": "Hace {count} días",
+      "weeksAgo": "Hace {count} semanas",
+      "monthsAgo": "Hace {count} meses"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "view": "Ver"
+    },
+    "deleteSuccess": "Lista eliminada correctamente",
+    "deleteError": "Error al eliminar la lista",
+    "editSuccess": "Lista actualizada correctamente",
+    "editError": "Error al actualizar la lista",
+    "createSuccess": "Lista creada correctamente",
+    "createError": "Error al crear la lista",
+    "deleteModal": {
+      "title": "Eliminar Lista Pública",
+      "message": "¿Estás seguro de que quieres eliminar esta lista pública?",
+      "confirm": "Eliminar",
+      "cancel": "Cancelar"
+    },
+    "form": {
+      "title": "Crear Nueva Lista Pública",
+      "subtitle": "Crea y gestiona listas públicas para tu audiencia",
+      "nameLabel": "Nombre de la Lista *",
+      "namePlaceholder": "Ingresa el nombre de la lista pública",
+      "descriptionLabel": "Descripción",
+      "descriptionPlaceholder": "Describe el contenido de la lista...",
+      "searchTitle": "Seleccionar Contenido",
+      "searchPlaceholder": "Buscar contenido por título o creador...",
+      "loadingContent": "Cargando contenido...",
+      "noContentFound": "No se encontró contenido que coincida con tu búsqueda",
+      "selectedCount": "{count} contenido seleccionado",
+      "cancel": "Cancelar",
+      "create": "Crear Lista",
+      "creating": "Creando...",
+      "nameRequired": "El nombre de la lista es obligatorio",
+      "contentRequired": "Debe seleccionarse al menos un contenido",
+      "createSuccess": "Lista pública creada correctamente",
+      "createError": "Error al crear la lista pública",
+      "loadContentError": "Error al cargar contenido disponible",
+      "audio": "Audio",
+      "video": "Video",
+      "submitButton": "Crear Lista",
+      "submitting": "Creando...",
+      "cancelButton": "Cancelar"
+    }
+  },
+  "favoritesPage": {
+    "title": "Mis Favoritos",
+    "description": "Todos tus contenidos favoritos en un solo lugar",
+    "loading": "Cargando favoritos...",
+    "listTitle": "Lista de Reproducción",
+    "playAll": "Reproducir Todo",
+    "meta": {
+      "item": "elemento",
+      "items": "elementos",
+      "special": "Lista Especial"
+    },
+    "content": {
+      "title": "Contenido"
+    },
+    "empty": {
+      "title": "No tienes favoritos",
+      "subtitle": "Explora contenido y añade tus favoritos para verlos aquí",
+      "exploreButton": "Explorar Contenido"
+    },
+    "toast": {
+      "removed": "Eliminado de favoritos",
+      "removeError": "Error al eliminar de favoritos",
+      "loadError": "Error al cargar favoritos",
+      "reordered": "¡Orden guardado exitosamente!",
+      "reorderError": "Error al guardar el nuevo orden."
+    },
+    "contentTypes": {
+      "video": "Video",
+      "audio": "Audio",
+      "content": "Contenido"
+    },
+    "editOrder": "Editar orden",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  }
+}

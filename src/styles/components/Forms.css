@@ -1,0 +1,91 @@
+/* ===================================
+   📝 FORMULARIOS Y COMPONENTES DE REGISTRO
+   =================================== */
+
+/* 🎨 CONTENEDOR PRINCIPAL DE REGISTRO */
+.registration-app {
+  /* 🎨 Mantener mismo fondo que la landing */
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--horizontal-padding);
+}
+
+.registration-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 🎨 CONTENEDOR PRINCIPAL DE REGISTRO - Ahora usa el sistema unificado de cards */
+
+.registration-header {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 36px);
+}
+
+.registration-header h1 {
+  /* 🎨 Título con gradiente como en hero */
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.registration-header p {
+  color: var(--muted);
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+/* 📝 FORMULARIOS - Paso 1 */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.form-row-single {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  color: var(--text);
+  font-weight: 500;
+  font-size: clamp(13px, 2.2vw, 15px);
+}
+
+.form-group input {
+  /* 🎨 Inputs con estilo consistente */
+  background: var(--panel-2);
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  color: var(--text);
+  padding: clamp(10px, 2vw, 14px) clamp(12px, 2.5vw, 16px);
+  border-radius: clamp(6px, 1vw, 10px);
+  font-size: clamp(13px, 2.2vw, 15px);
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 2px rgba(90, 160, 255, 0.1);
+}

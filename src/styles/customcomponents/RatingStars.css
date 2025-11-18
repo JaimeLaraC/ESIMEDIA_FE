@@ -1,0 +1,40 @@
+/* RatingStars Component Styles */
+.stars {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.stars.interactive {
+  cursor: pointer;
+}
+
+.star {
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.star.empty {
+  color: var(--muted);
+}
+
+.star.clickable:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stars {
+    font-size: 14px;
+  }
+
+  .star {
+    font-size: 18px;
+  }
+}

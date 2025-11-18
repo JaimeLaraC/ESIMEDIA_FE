@@ -1,0 +1,213 @@
+/* Importar sistema unificado de badges */
+@import '../components/Badges.css';
+
+/* ===================================
+   ✨ HEADER USUARIO PREMIUM
+   Estilos específicos para usuarios premium
+   =================================== */
+
+/* 🖼️ AVATAR DE USUARIO PREMIUM */
+.user-avatar-btn {
+  position: relative;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: clamp(32px, 3vw, 40px);
+  height: clamp(32px, 3vw, 40px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.user-avatar-btn:hover {
+  border-color: var(--accent-1);
+  transform: scale(1.05);
+}
+
+.user-avatar-btn.premium {
+  border-color: #ffd700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* 📋 DROPDOWN DE USUARIO PREMIUM */
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: var(--horizontal-padding) !important;
+  background: rgb(11, 15, 23); /* Fondo sólido consistente */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  min-width: 280px;
+  max-width: calc(100vw - 2 * var(--horizontal-padding)) !important;
+  overflow: hidden;
+  animation: slideDownFade 0.2s ease;
+}
+
+.user-dropdown.premium {
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 👤 INFORMACIÓN DEL USUARIO PREMIUM */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.user-avatar-large {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.user-avatar-large.premium {
+  border-color: #ffd700;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.username {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-type {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.user-type.premium {
+  color: #ffd700;
+}
+
+/* 🧭 NAVEGACIÓN DEL MENÚ DE USUARIO PREMIUM */
+.user-menu-nav {
+  padding: 8px;
+}
+
+.user-menu-nav button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-menu-nav button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-1);
+}
+
+.user-menu-nav hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+}
+
+/* 🌫️ OVERLAY PARA CERRAR MENÚ */
+.user-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 45;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 📱 RESPONSIVO PARA USUARIO PREMIUM */
+@media (max-width: 768px) {
+  .user-dropdown {
+    right: var(--horizontal-padding) !important;
+    min-width: calc(100vw - 2 * var(--horizontal-padding)) !important;
+    max-width: calc(100vw - 2 * var(--horizontal-padding)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-menu-container {
+    gap: clamp(4px, 1vw, 8px);
+  }
+  
+  .user-avatar-btn {
+    width: clamp(28px, 6vw, 32px);
+    height: clamp(28px, 6vw, 32px);
+  }
+  
+  .premium-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+}
+
+/* 📱 PANTALLAS MUY PEQUEÑAS: Círculo perfecto para premium */
+@media (max-width: 425px) {
+  .user-avatar-btn {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    flex-shrink: 0;
+  }
+  
+  .premium-badge {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+}

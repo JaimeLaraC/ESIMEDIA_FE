@@ -1,0 +1,138 @@
+/* ===================================
+   🃏 TARJETA DE CONTENIDO (MediaCard)
+   =================================== */
+
+/* Importar sistema unificado de cards */
+@import '../components/Cards.css';
+
+/* 🎴 TARJETA BASE - Ahora usa el sistema unificado */
+/* La clase .card se hereda del sistema unificado */
+
+/* 🖱️ EFECTO HOVER DE TARJETAS - Extiende el sistema base */
+.card:hover {
+  border-color: var(--accent-2); /* Color específico para media cards */
+}
+
+/* 🖼️ CONTENEDOR DE IMAGEN */
+.card-image-container {
+  position: relative;
+  width: 100%;
+}
+
+/* 🖼️ IMAGEN/THUMBNAIL DE TARJETA */
+.thumb {
+  width: 100%;                                 /* Ancho completo */
+  aspect-ratio: 16 / 9;                       /* Proporción widescreen */
+  object-fit: cover;                          /* Cubre el área sin deformar */
+  display: block;                             /* Elimina espacios de inline */
+  transition: transform 0.3s ease;           /* Animación de zoom */
+}
+
+/* 🔍 EFECTO ZOOM EN HOVER DE IMAGEN */
+.card:hover .thumb {
+  transform: scale(1.05);                     /* Zoom sutil del 5% */
+}
+
+/* 📄 CUERPO DE CONTENIDO DE LA TARJETA */
+.card-body {
+  padding: clamp(8px, 1.2vw, 16px) clamp(10px, 1.4vw, 20px);  /* Padding responsive */
+}
+
+/* 🏷️ TÍTULO DE TARJETA */
+.card-title {
+  margin: 0 0 clamp(4px, 0.6vw, 10px);       /* Solo margen inferior */
+  font-size: clamp(12px, 1.1vw, 16px);       /* Tamaño responsive */
+  font-weight: 600;                           /* Semi-negrita */
+  line-height: 1.3;                          /* Interlineado compacto */
+}
+
+/* 👤 CREADOR */
+.card-creator {
+  font-size: clamp(11px, 0.9vw, 14px);       /* Texto más pequeño que el título */
+  color: var(--muted);                        /* Color tenue */
+  margin-bottom: clamp(6px, 0.8vw, 12px);    /* Espacio antes del rating */
+  font-weight: 500;
+}
+
+/* 📊 RATING Y META INFO */
+.card-rating-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(4px, 0.6vw, 8px);
+}
+
+/* ⭐ RATING CON ESTRELLAS */
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.4vw, 6px);
+}
+
+/* 📊 CONTEO DE VALORACIONES */
+.rating-count {
+  font-size: clamp(10px, 0.8vw, 13px);
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* 📊 METAINFORMACIÓN (rating, fecha, etc.) */
+.meta {
+  font-size: clamp(10px, 0.9vw, 14px);       /* Texto más pequeño */
+  color: var(--muted);                        /* Color tenue */
+  display: flex;                              /* Layout horizontal */
+  justify-content: space-between;             /* Distribuye extremos */
+  align-items: center;                        /* Centra verticalmente */
+}
+
+/* ⭐ ESTRELLAS DE RATING */
+.stars {
+  font-size: clamp(10px, 0.9vw, 14px);       /* Tamaño de estrellas */
+  letter-spacing: 1px;                        /* Espaciado entre estrellas */
+  /* 🌈 GRADIENTE DE COLORES */
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  -webkit-background-clip: text;              /* Clip para WebKit */
+  background-clip: text;                      /* Clip estándar */
+  color: transparent;                         /* Hace transparente el texto */
+}
+
+/* 🏆 BADGE PREMIUM */
+.card-premium-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: premiumGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes premiumGlow {
+  0% { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+  100% { box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4); }
+}
+
+/* ⏱️ BADGE DURACIÓN */
+.card-duration-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 2;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

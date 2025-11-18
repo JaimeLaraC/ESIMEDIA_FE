@@ -1,0 +1,135 @@
+/* ===================================
+   🦸 HERO SECTION
+   =================================== */
+
+/* 🎯 CONTENEDOR PRINCIPAL DEL HERO */
+.hero {
+  /* 📐 POSICIONAMIENTO Y TAMAÑO */
+  margin: clamp(16px, 2vw, 32px) auto 0 auto;
+  width: var(--content-available-width);
+  
+  /* 🏗️ LAYOUT GRID */
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1.2fr 1fr;  /* Izquierda más ancha que derecha */
+  box-sizing: border-box;
+}
+
+/* 👈 LADO IZQUIERDO DEL HERO - Contenido principal */
+.hero-left {
+  /* 🎨 ESTILOS VISUALES */
+  background: radial-gradient(clamp(800px, 80vw, 1400px) clamp(200px, 25vh, 400px) at -10% -20%, rgba(90, 160, 255, .15), transparent), var(--panel);
+  border: 1px solid #1f2937;
+  border-radius: var(--radius);
+  padding: var(--section-padding);
+  /* 🔄 ANIMACIÓN PARA TEXTO ROTATIVO */
+  animation: fadeInContent 0.5s ease-in-out;
+  /* 📐 CENTRADO VERTICAL */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 🔐 HERO CUANDO EL USUARIO ESTÁ AUTENTICADO */
+.hero-authenticated .hero-left {
+  /* Asegurar que el contenido quede bien centrado verticalmente */
+  min-height: 400px;
+}
+
+/* 🏷️ TÍTULO PRINCIPAL DEL HERO */
+.hero-title {
+  font-size: var(--font-size-h1);  /* Tamaño más grande */
+  line-height: 1.1;        /* Interlineado compacto para títulos */
+  margin: 0 0 clamp(12px, 1.5vw, 24px);
+  letter-spacing: clamp(-0.5px, -0.02em, 0px);  /* Espaciado de letras ajustado */
+  font-weight: 700;        /* Negrita */
+}
+
+/* 🎨 PARTE ACENTUADA DEL TÍTULO - Colores del logotipo */
+.hero-title-accent {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🔄 ANIMACIONES PARA TEXTO ROTATIVO */
+.hero-title-text {
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🎯 KEYFRAMES PARA ANIMACIONES */
+@keyframes fadeInContent {
+  0% {
+    opacity: 0.7;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📝 SUBTÍTULO/DESCRIPCIÓN DEL HERO */
+.hero-sub {
+  color: var(--muted);     /* Color más tenue */
+  transition: all 0.5s ease-in-out;
+  margin: 0 0 clamp(16px, 2vw, 32px);
+  font-size: clamp(14px, 1.3vw, 18px);
+  line-height: 1.5;        /* Interlineado cómodo para lectura */
+}
+
+/* 🎯 BOTONES DE ACCIÓN DEL HERO */
+.hero-actions {
+  display: flex;
+  gap: clamp(10px, 1.2vw, 20px);
+  align-items: center;
+  flex-wrap: wrap;         /* Se ajustan en móviles */
+}
+
+/* 👉 LADO DERECHO DEL HERO - Preview */
+.hero-right {
+  background: var(--panel-2);
+  border: 1px solid #1f2937;
+  border-radius: var(--radius);
+  padding: clamp(12px, 1.5vw, 24px);
+  display: grid;
+  place-items: center;
+}
+
+.preview {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: clamp(8px, 1vw, 14px);
+  overflow: hidden;
+  border: 1px solid #243047;
+  background: #0e1524;
+  transition: all 0.3s ease;
+}
+
+.preview:hover {
+  transform: scale(1.02);
+  border-color: var(--accent-2);
+}
+
+.preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================
+   📱 RESPONSIVE DESIGN - Hero
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;  /* Una sola columna en móviles */
+    gap: clamp(16px, 3vw, 24px);
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+}

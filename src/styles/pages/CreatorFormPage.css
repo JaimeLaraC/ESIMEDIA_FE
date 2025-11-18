@@ -1,0 +1,112 @@
+/* ===================================
+   🎨 CREATOR FORM PAGE - ESIMedia Design System
+   Página principal del formulario de creadores
+   =================================== */
+
+.creator-form-page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  
+  /* Fondo atractivo con gradientes */
+  background:
+    radial-gradient(ellipse 800px 600px at -10% -10%, rgba(0, 229, 255, .12), transparent),
+    radial-gradient(ellipse 600px 500px at 110% -5%, rgba(156, 39, 176, .08), transparent),
+    radial-gradient(ellipse 400px 300px at 50% 100%, rgba(180, 69, 255, .06), transparent),
+    var(--bg);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.creator-form-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================================
+   🌍 LANGUAGE SELECTOR FLOTANTE
+   =================================== */
+
+.language-selector-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.language-selector-float .language-selector {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+   ✨ ANIMATIONS & EFFECTS
+   =================================== */
+
+.creator-form-page * {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-section:nth-child(2) { animation-delay: 0.1s; }
+.form-section:nth-child(3) { animation-delay: 0.2s; }
+.form-section:nth-child(4) { animation-delay: 0.3s; }
+.creator-form .form-submit-section { animation-delay: 0.4s; }
+
+/* ===================================
+   📱 RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+  .creator-form-container {
+    grid-template-columns: 65% 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .creator-form-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  
+  .language-selector-float {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .creator-form-container {
+    width: 100vw;
+    min-height: 100vh;
+    grid-template-rows: auto auto;
+  }
+  
+  .language-selector-float {
+    bottom: 10px;
+    right: 10px;
+  }
+}

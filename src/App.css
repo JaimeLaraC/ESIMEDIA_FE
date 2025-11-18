@@ -1,0 +1,915 @@
+/* ===================================
+   🎨 VARIABLES GLOBALES DEL TEMA
+   =================================== */
+
+:root {
+  /* 🎨 COLORES BASE - Cambia aquí el esquema de colores principal */
+  --bg: #0b0f17;           /* Color de fondo principal */
+  --panel: #121826;        /* Color de cajas/paneles */
+  --panel-2: #0f1522;     /* Color de paneles secundarios */
+  --text: #e5e7eb;         /* Color de texto principal */
+  --muted: #9ca3af;        /* Color de texto secundario/muted */
+
+  /* 🌟 PALETA DE ACENTOS - Colores de marca ESIMedia */
+  --accent-1: #00e5ff;     /* Acento primario (cyan) */
+  --accent-2: #5aa0ff;     /* Acento secundario (azul) */
+  --accent-3: #b455ff;     /* Acento terciario (púrpura) */
+
+  /* ✨ EFECTOS VISUALES */
+  --ring: 0 0 0 2px rgba(90, 160, 255, .3);  /* Efecto de foco/anillo */
+  --radius: clamp(8px, 1.2vw, 18px);         /* Bordes redondeados responsivos */
+  --header-height: clamp(56px, 8vw, 76px);   /* Altura dinámica del header */
+  
+  /* 🎯 ELEMENTOS DE INTERFAZ */
+  --text-color: var(--text);                 /* Color de texto de elementos */
+  --border-color: rgba(156, 163, 175, 0.3); /* Color de bordes sutiles */
+  
+  /* 📐 SISTEMA DE LAYOUT RESPONSIVO - Variables clave para el diseño */
+  --container-width: 100vw;                                       /* Ancho total del viewport */
+  --content-max-width: 100vw;                                    /* Ancho máximo del contenido */
+  --content-available-width: calc(100vw - 2 * var(--horizontal-padding));  /* Ancho disponible menos márgenes */
+  --horizontal-padding: clamp(20px, 4vw, 48px);                  /* Márgenes laterales responsivos */
+  --section-padding: clamp(16px, 2.5vw, 40px);                   /* Padding interno de secciones */
+  --grid-gap: clamp(12px, 1.5vw, 20px);                         /* Espacio entre elementos del grid */
+  
+  /* 📝 SISTEMA TIPOGRÁFICO RESPONSIVO - Tamaños de fuente que escalan */
+  --font-size-base: clamp(14px, 1.1vw, 16px);    /* Texto base */
+  --font-size-h1: clamp(28px, 4vw, 60px);        /* Títulos principales */
+  --font-size-h2: clamp(18px, 2.2vw, 32px);      /* Subtítulos */
+  --font-size-h3: clamp(16px, 1.8vw, 24px);      /* Títulos pequeños */
+}/* ===================================
+   🔧 CONFIGURACIÓN BASE DEL DOCUMENTO
+   =================================== */
+
+/* 🌐 CONFIGURACIÓN DEL HTML - Base del documento */
+html {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: var(--bg);    /* Color de fondo base como respaldo */
+  box-sizing: border-box;
+}
+
+/* 🎨 FONDO FIJO CON DEGRADADOS - Capa visual siempre visible */
+html::before {
+  content: '';
+  position: fixed;          /* Siempre visible en el viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 🌟 DEGRADADOS DE FONDO - Cambia aquí los colores y posiciones */
+  background: var(--bg);
+  z-index: -1;             /* Detrás de todo el contenido */
+}
+
+/* 📄 ELEMENTOS BASE DEL DOM */
+body,
+#root {
+  height: 100%;
+}
+
+/* 🎨 CONFIGURACIÓN PRINCIPAL DEL BODY - Fondo y tipografía base */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;       /* Altura dinámica del viewport para móviles */
+  
+  /* 🌈 FONDO PRINCIPAL CON DEGRADADOS - Se extiende con el contenido */
+  background:
+    radial-gradient(clamp(800px, 100vw, 1400px) clamp(600px, 150vh, 1500px) at -10% -10%, rgba(90, 160, 255, .14), transparent),
+    radial-gradient(clamp(600px, 80vw, 1200px) clamp(500px, 120vh, 1200px) at 110% -5%, rgba(180, 85, 255, .10), transparent),
+    var(--bg);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: top center;
+  
+  /* 📝 TIPOGRAFÍA BASE - Fuente y colores por defecto */
+  color: var(--text);
+  font-family: Inter, system-ui, Arial, sans-serif;  /* Pila de fuentes modernas */
+  font-size: var(--font-size-base);
+  line-height: 1.6;         /* Interlineado cómodo para lectura */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;       /* Previene scroll horizontal */
+}
+
+/* ===================================
+   📱 ESTRUCTURA PRINCIPAL DE LA APP
+   =================================== */
+
+/* 🏗️ CONTENEDOR PRINCIPAL - Layout base de la aplicación */
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;       /* Altura completa en móviles */
+  width: 100%;
+  display: flex;
+  flex-direction: column;   /* Layout vertical */
+  align-items: stretch;     /* Usa todo el ancho disponible */
+  background: transparent;
+  padding-top: clamp(60px, 8vh, 80px);  /* Espacio para header fijo */
+}
+
+/* 📦 CONTENEDOR GENÉRICO - Para contenido con padding */
+.container {
+  width: 100%;
+  margin: 0;
+  padding: var(--section-padding) var(--horizontal-padding) clamp(32px, 4vw, 80px);
+  box-sizing: border-box;
+}
+
+/* 🔻 FOOTER - Pie de página */
+.footer {
+  /* 📐 POSICIONAMIENTO Y TAMAÑO */
+  margin-top: auto;         /* Se empuja al final */
+  width: 100vw;             /* Ocupa toda la anchura disponible */
+  
+  /* 🎨 ESTILOS VISUALES */
+  color: var(--muted);
+  font-size: clamp(11px, 1vw, 14px);
+  text-align: center;
+  padding: clamp(20px, 3vw, 40px) var(--horizontal-padding);
+  border-top: 1px solid #1f2937;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02));
+  box-sizing: border-box;
+}
+
+/* ===================================
+    SECCIÓN HERO - Banner principal
+   =================================== */
+
+/* 🎯 CONTENEDOR PRINCIPAL DEL HERO */
+.hero {
+  /* 📐 POSICIONAMIENTO Y TAMAÑO */
+  margin: clamp(16px, 2vw, 32px) auto 0 auto;
+  width: var(--content-available-width);
+  
+  /* 🏗️ LAYOUT GRID */
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1.2fr 1fr;  /* Izquierda más ancha que derecha */
+  box-sizing: border-box;
+}
+
+/* 👈 LADO IZQUIERDO DEL HERO - Contenido principal */
+.hero-left {
+  /* 🎨 ESTILOS VISUALES */
+  background: radial-gradient(clamp(800px, 80vw, 1400px) clamp(200px, 25vh, 400px) at -10% -20%, rgba(90, 160, 255, .15), transparent), var(--panel);
+  border: 1px solid #1f2937;
+  border-radius: var(--radius);
+  padding: var(--section-padding);
+  /* 🔄 ANIMACIÓN PARA TEXTO ROTATIVO */
+  animation: fadeInContent 0.5s ease-in-out;
+}
+
+/* 🏷️ TÍTULO PRINCIPAL DEL HERO */
+.hero-title {
+  font-size: var(--font-size-h1);  /* Tamaño más grande */
+  line-height: 1.1;        /* Interlineado compacto para títulos */
+  margin: 0 0 clamp(12px, 1.5vw, 24px);
+  letter-spacing: clamp(-0.5px, -0.02em, 0px);  /* Espaciado de letras ajustado */
+  font-weight: 700;        /* Negrita */
+}
+
+/* 🎨 PARTE ACENTUADA DEL TÍTULO - Colores del logotipo */
+.hero-title-accent {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🔄 ANIMACIONES PARA TEXTO ROTATIVO */
+.hero-title-text {
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🎯 KEYFRAMES PARA ANIMACIONES */
+@keyframes fadeInContent {
+  0% {
+    opacity: 0.7;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📝 SUBTÍTULO/DESCRIPCIÓN DEL HERO */
+.hero-sub {
+  color: var(--muted);     /* Color más tenue */
+  transition: all 0.5s ease-in-out;
+  margin: 0 0 clamp(16px, 2vw, 32px);
+  font-size: clamp(14px, 1.3vw, 18px);
+  line-height: 1.5;        /* Interlineado cómodo para lectura */
+}
+
+/* 🎯 BOTONES DE ACCIÓN DEL HERO */
+.hero-actions {
+  display: flex;
+  gap: clamp(10px, 1.2vw, 20px);
+  align-items: center;
+  flex-wrap: wrap;         /* Se ajustan en móviles */
+}
+
+.hero-right {
+  background: var(--panel-2);
+  border: 1px solid #1f2937;
+  border-radius: var(--radius);
+  padding: clamp(12px, 1.5vw, 24px);
+  display: grid;
+  place-items: center;
+}
+
+.preview {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: clamp(8px, 1vw, 14px);
+  overflow: hidden;
+  border: 1px solid #243047;
+  background: #0e1524;
+  transition: all 0.3s ease;
+}
+
+.preview:hover {
+  transform: scale(1.02);
+  border-color: var(--accent-2);
+}
+
+.preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================
+   📦 SECCIONES DE CONTENIDO
+   =================================== */
+
+/* 🏗️ CONTENEDOR BASE PARA SECCIONES */
+.section {
+  /* 📐 POSICIONAMIENTO Y DIMENSIONES */
+  margin: clamp(20px, 3vw, 48px) auto 0 auto;  /* Centrado con margen superior responsive */
+  width: var(--content-available-width);        /* Ancho controlado por variable */
+  
+  /* 🎨 ESTILOS VISUALES */
+  background: var(--panel);
+  border: 1px solid #1f2937;
+  border-radius: var(--radius);
+  padding: var(--section-padding);
+  box-sizing: border-box;
+}
+
+/* 🏷️ TÍTULOS DENTRO DE SECCIONES (H2) */
+.section h2 {
+  margin: 0 0 clamp(12px, 1.8vw, 28px);        /* Solo margen inferior responsive */
+  font-size: var(--font-size-h2);              /* Tamaño H2 */
+  letter-spacing: clamp(-0.3px, -0.01em, 0px); /* Espaciado de letras optimizado */
+  font-weight: 600;                             /* Semi-negrita */
+}
+
+/* ===================================
+   🗂️ SISTEMA DE GRILLAS - Layout flexible
+   =================================== */
+
+/* 🎯 GRID TOTALMENTE RESPONSIVE */
+.grid {
+  display: grid;
+  /* 🔄 COLUMNAS AUTO-AJUSTABLES */
+  /* auto-fit: Se ajusta automáticamente al contenido */
+  /* minmax: mínimo 140px, máximo proporcional al contenedor */
+  grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 15vw, 220px), 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ===================================
+   📱💻🖥️ BREAKPOINTS RESPONSIVOS
+   =================================== */
+
+/* 🖥️ PANTALLAS 4K Y ULTRA-WIDE (3840px+) */
+@media (min-width: 3840px) {
+  :root {
+    /* 📐 Variables ajustadas para pantallas enormes */
+    --horizontal-padding: clamp(48px, 6vw, 120px);  /* Padding más generoso */
+    --section-padding: 60px;                        /* Secciones más espaciosas */
+    --grid-gap: 32px;                              /* Gap mayor entre elementos */
+  }
+
+  .grid {
+    /* 🗂️ Elementos más anchos en 4K */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .hero {
+    gap: 40px;  /* Mayor espacio entre columnas del hero */
+  }
+}
+
+/* 🖥️ PANTALLAS GRANDES 2K-4K (2560px - 3839px) */
+@media (min-width: 2560px) and (max-width: 3839px) {
+  :root {
+    /* 📐 Variables para pantallas 2K */
+    --horizontal-padding: clamp(40px, 5vw, 80px);
+    --section-padding: 48px;
+    --grid-gap: 28px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* 🖥️ PANTALLAS GRANDES ESTÁNDAR (1920px - 2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  :root {
+    /* 📐 Variables para Full HD+ */
+    --horizontal-padding: clamp(32px, 4vw, 64px);
+    --section-padding: 40px;
+    --grid-gap: 24px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* 💻 DESKTOP ESTÁNDAR (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .grid {
+    /* 🗂️ Elementos ligeramente más pequeños */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* 💻📱 TABLETS LANDSCAPE Y DESKTOP PEQUEÑO (980px - 1199px) */
+@media (max-width: 1199px) {
+  .hero {
+    /* 🔄 Hero cambia a una sola columna */
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    /* ⬆️ Imagen del hero va arriba en tablets */
+    order: -1;
+  }
+}
+
+/* 📱 TABLETS (768px - 979px) */
+@media (max-width: 979px) {
+  :root {
+    /* 📐 Variables ajustadas para tablets */
+    --horizontal-padding: clamp(16px, 3vw, 32px);  /* Padding más compacto */
+    --section-padding: clamp(20px, 3vw, 32px);     /* Secciones más compactas */
+  }
+
+  .grid {
+    /* 🗂️ Elementos ligeramente más pequeños */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* 📱 MOBILE LANDSCAPE Y TABLETS PEQUEÑAS (640px - 767px) */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .hero-actions {
+    /* 📱 Botones en columna vertical */
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+
+}
+
+/* 📱 MOBILE PORTRAIT (480px - 639px) */
+@media (max-width: 639px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: clamp(8px, 2vw, 16px);
+  }
+}
+
+/* 📱 MOBILE PEQUEÑO (320px - 479px) */
+@media (max-width: 479px) {
+  :root {
+    /* 📐 Variables ultra-compactas para móviles pequeños */
+    --horizontal-padding: clamp(12px, 4vw, 20px);  /* Padding mínimo */
+    --section-padding: clamp(16px, 4vw, 24px);     /* Secciones compactas */
+    --grid-gap: clamp(8px, 2vw, 12px);            /* Gap mínimo */
+  }
+
+
+
+  .grid {
+    /* 🗂️ Solo 2 columnas en móvil pequeño */
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(6px, 2vw, 12px);
+  }
+
+  .card-title {
+    /* 📝 Títulos más pequeños */
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
+  .meta {
+    /* 📊 Metadatos más pequeños */
+    font-size: clamp(9px, 2.5vw, 12px);
+  }
+}
+
+/* 📱 MOBILE MUY PEQUEÑO (menos de 320px) */
+@media (max-width: 319px) {
+  .grid {
+    /* 🗂️ Una sola columna en pantallas extremadamente pequeñas */
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    /* 🏷️ Título del hero ajustado */
+    font-size: clamp(20px, 6vw, 28px);
+  }
+}
+
+/* ===================================
+   🎯 OPTIMIZACIONES ESPECIALES
+   =================================== */
+
+/* 📏 PANTALLAS ALTAS (1080px+ altura) */
+@media (min-height: 1080px) {
+  .container {
+    /* ⬇️ Más padding inferior en pantallas altas para mejor proporción */
+    padding-bottom: clamp(60px, 6vh, 120px);
+  }
+}
+
+/* 🖥️ PANTALLAS MUY ANCHAS (Ultra-wide 21:9+) */
+@media (min-aspect-ratio: 21/9) {
+  .hero {
+    /* 📐 Ajusta proporciones del hero para pantallas ultra-wide */
+    grid-template-columns: 1.5fr 1fr;  /* Da más espacio al contenido */
+  }
+
+  :root {
+    /* 📏 Padding horizontal extra para pantallas ultra-wide */
+    --horizontal-padding: clamp(60px, 8vw, 200px);
+  }
+}
+
+/* ===================================
+   🛡️ REGLAS DE SEGURIDAD PARA LAYOUT
+   =================================== */
+
+/* 🎯 PREVENIR DESBORDAMIENTO LATERAL - Todos los elementos principales deben respetar márgenes */
+.container,
+.section,
+.hero,
+.footer {
+  max-width: var(--content-available-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 🛡️ ELEMENTOS FLOTANTES - No pueden salirse de la página */
+.floating,
+.menu,
+.user-menu-overlay,
+.mobile-menu-overlay,
+.language-selector-float {
+  max-width: calc(100vw - 2 * var(--horizontal-padding)) !important;
+  left: var(--horizontal-padding) !important;
+  right: var(--horizontal-padding) !important;
+  box-sizing: border-box !important;
+}
+
+/* 🎯 HEADER DROPDOWNS - Reglas supremas para prevenir overflow */
+.header .user-dropdown,
+.header .notifications-dropdown,
+.header .admin-dropdown,
+.header [class*="dropdown"] {
+  position: absolute !important;
+  right: var(--horizontal-padding) !important;
+  left: auto !important;
+  max-width: calc(100vw - 2 * var(--horizontal-padding)) !important;
+  box-sizing: border-box !important;
+  z-index: 1000 !important;
+}
+
+/* Reglas específicas para diferentes tipos de dropdown */
+.header .user-dropdown {
+  top: calc(100% + 8px) !important;
+}
+
+.header .notifications-dropdown {
+  top: calc(100% + 8px) !important;
+  right: calc(var(--horizontal-padding) + 60px) !important;
+  max-width: calc(100vw - 2 * var(--horizontal-padding) - 60px) !important;
+}
+
+.header .admin-dropdown {
+  top: calc(100% + 8px) !important;
+}
+
+/* 🛡️ REGLA SUPREMA - Ningún elemento del header puede salirse de la página */
+.header * {
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+}
+
+.header [style*="position: absolute"],
+.header [style*="position:absolute"] {
+  right: var(--horizontal-padding) !important;
+  left: auto !important;
+  max-width: calc(100vw - 2 * var(--horizontal-padding)) !important;
+}
+
+/* ===================================
+   🌍 SELECTOR DE IDIOMA FLOTANTE
+   =================================== */
+
+.language-selector-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.language-selector-float .language-selector {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.language-select {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.language-select:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.language-select:focus {
+  box-shadow: var(--ring);
+}
+
+.language-select option {
+  background: var(--panel);
+  color: var(--text);
+  padding: 8px;
+}
+
+.language-loading {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.language-loading span {
+  font-size: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ===================================
+   📱 MENÚ MÓVIL DESPLEGABLE
+   =================================== */
+
+/* Contenedor del brand con funcionalidad móvil */
+.brand-container {
+  position: relative;
+  display: inline-block; /* Evitar que se expanda innecesariamente */
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Brand desktop (normal) */
+.desktop-brand {
+  display: flex;
+}
+
+/* Botón del brand para móviles */
+.mobile-brand-btn {
+  display: none;
+  background: rgba(11, 15, 23, 0.7); /* Mismo fondo que el header */
+  backdrop-filter: blur(8px);
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.mobile-brand-btn:hover {
+  background: rgba(11, 15, 23, 0.9);
+  transform: scale(1.05);
+}
+
+/* Menú desplegable móvil */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--header-height, 60px); /* Justo debajo del header */
+  left: var(--horizontal-padding) !important; /* REGLA SUPREMA: Márgen izquierdo consistente */
+  background: rgba(11, 15, 23, 0.95); /* Mucho más opaco para mayor solidez */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none; /* Sin borde superior para unión con header */
+  border-radius: 0 0 calc(var(--radius) + 4px) calc(var(--radius) + 4px); /* Bordes más redondeados */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 
+              0 4px 12px rgba(0, 229, 255, 0.1); /* Doble sombra con acento */
+  backdrop-filter: blur(12px); /* Efecto glassmorphism */
+  z-index: 45; /* Justo por encima del header (40) pero sin conflictos */
+  width: 80vw; /* Ancho por defecto para móviles */
+  max-width: calc(100vw - 2 * var(--horizontal-padding)) !important; /* REGLA SUPREMA: No salirse de la página */
+  overflow: hidden;
+}
+
+.mobile-menu-open {
+  display: block !important;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedor de búsqueda móvil */
+.mobile-search-container {
+  padding: clamp(16px, 4vw, 20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(11, 15, 23, 0.9); /* Más opaco para coherencia */
+  position: relative;
+}
+
+.mobile-search-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+  opacity: 0.3;
+}
+
+.mobile-search {
+  width: 100%;
+}
+
+.mobile-search input {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
+  color: var(--text);
+  font-size: clamp(14px, 3vw, 16px);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.mobile-search input::placeholder {
+  color: var(--muted);
+}
+
+.mobile-search input:focus {
+  outline: none;
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+/* Navegación dentro del menú móvil */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav button,
+.mobile-nav a {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: clamp(16px, 4vw, 20px) clamp(20px, 5vw, 24px);
+  text-align: left;
+  cursor: pointer;
+  font-size: clamp(15px, 3.5vw, 17px);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  text-decoration: none; /* Para los enlaces */
+  display: block; /* Para que funcione el width: 100% */
+}
+
+.mobile-nav button:last-child,
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav button:hover,
+.mobile-nav a:hover {
+  background: rgba(11, 15, 23, 0.9); /* Misma opacidad que la barra de búsqueda */
+  color: var(--accent-1);
+  transform: translateX(4px);
+  border-left: 2px solid var(--accent-1);
+}
+
+.mobile-nav button:active,
+.mobile-nav a:active {
+  background: rgba(11, 15, 23, 0.95); /* Ligeramente más opaco que hover */
+  transform: translateX(2px);
+}
+
+/* Overlay para cerrar el menú */
+.mobile-menu-overlay {
+  position: fixed;
+  top: var(--header-height, 60px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 44;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+
+/* Elementos desktop - ocultar en móviles */
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-search {
+  display: flex;
+}
+
+/* RESPONSIVE - ACTIVAR MENÚ MÓVIL */
+@media (max-width: 768px) {
+  /* Ocultar elementos desktop */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .desktop-search {
+    display: none;
+  }
+  
+  .desktop-brand {
+    display: none;
+  }
+  
+  /* Mostrar botón brand móvil */
+  .mobile-brand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Ajustar contenedor en móviles */
+  .brand-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* El menú móvil se muestra cuando está abierto */
+  .mobile-menu {
+    display: none; /* Por defecto oculto */
+  }
+  
+  .mobile-menu.mobile-menu-open {
+    display: block !important; /* Forzar visibilidad cuando está abierto */
+  }
+}
+
+/* RESPONSIVE WIDTHS - Anchos específicos por dispositivo */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Tablets - 50% del ancho */
+  .mobile-menu {
+    width: 50vw;
+    min-width: 300px; /* Mínimo para que se vea bien */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Móviles - 80% del ancho */
+  .mobile-menu {
+    width: 80vw;
+    min-width: 280px; /* Mínimo para móviles muy pequeños */
+  }
+}
+
+@media (max-width: 375px) {
+  /* Móviles muy pequeños - 90% del ancho */
+  .mobile-menu {
+    width: 90vw;
+    min-width: 260px; /* Mínimo reducido para pantallas muy pequeñas */
+  }
+}
+
+/* ===================================
+   ✨ FIN DEL SISTEMA CSS RESPONSIVE
+
+   🎯 GUÍA RÁPIDA DE MODIFICACIÓN:
+   - Variables CSS (:root) - Cambios globales
+   - Header (.header, .nav, .search) - Navegación
+   - Hero (.hero, .hero-*) - Banner principal
+   - Secciones (.section, .grid) - Contenido
+   - Tarjetas (.card, .card-*) - Elementos
+   - Breakpoints (@media) - Responsividad
+
+   📝 NOTA: Los estilos de registro y autenticación han sido movidos
+   a sus archivos específicos para mejor organización:
+   - RegistrationStep1.css - Paso 1 del registro
+   - RegistrationStep2.css - Paso 2 del registro
+   - AuthPage.css - Página de autenticación completa
+   =================================== */
+
+/* ===================================
+   📜 BARRA DE SCROLL DISCRETA
+   =================================== */
+
+/* 🎨 BARRA DE SCROLL PERSONALIZADA - Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;        /* Ancho de la barra vertical */
+  height: 8px;       /* Alto de la barra horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;  /* Fondo transparente */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);  /* Color sutil del thumb */
+  border-radius: 4px;                    /* Bordes redondeados */
+  transition: all 0.2s ease;             /* Transición suave */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);  /* Más visible al hacer hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(156, 163, 175, 0.7);  /* Más visible al hacer click */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;  /* Esquina transparente */
+}
+
+/* 🎨 BARRA DE SCROLL PARA FIREFOX */
+* {
+  scrollbar-width: thin;                    /* Barra delgada */
+  scrollbar-color: rgba(156, 163, 175, 0.3) transparent;  /* Color thumb y track */
+}
+
+/* ===================================
+   📜 RESET DE SCROLL EN MODALES/PÁGINAS
+   =================================== */
+
+/* 🎯 RESET SCROLL CUANDO SE ABREN MODALES */
+.modal-open body {
+  overflow: hidden;  /* Previene scroll del body cuando hay modal */
+}
+
+/* 🎯 CLASE PARA RESET DE SCROLL */
+.scroll-to-top {
+  scroll-behavior: smooth;  /* Scroll suave */
+}
+
+/* 🎯 AUTO-SCROLL AL TOP CUANDO SE MONTA UN COMPONENTE */
+.scroll-to-top:focus {
+  scroll-margin-top: 0;
+}

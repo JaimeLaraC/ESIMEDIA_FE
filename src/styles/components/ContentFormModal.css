@@ -1,0 +1,428 @@
+/* ===================================
+   📝 CONTENT FORM MODAL - Formulario modal para contenido
+   =================================== */
+
+.content-form-container {
+  padding-right: var(--spacing-sm); /* Espacio para la scrollbar */
+}
+
+.content-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  max-width: 100%;
+}
+
+/* ===================================
+   📋 SECCIONES DEL FORMULARIO
+   =================================== */
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-section h3 {
+  color: var(--text);
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-xs);
+}
+
+/* ===================================
+   📄 FUENTE DEL CONTENIDO (NO EDITABLE)
+   =================================== */
+
+.content-source-display {
+  background: var(--panel-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+}
+
+.source-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.source-label {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.source-value {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  word-break: break-all;
+  background: var(--panel-1);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* ===================================
+   📝 FILAS DEL FORMULARIO
+   =================================== */
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* ===================================
+   🔄 TOGGLES PARA OPCIONES
+   =================================== */
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.toggle-label {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.toggle-options {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.toggle-option {
+  position: relative;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--panel-1);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  min-width: 120px;
+  justify-content: center;
+}
+
+.toggle-option:hover {
+  border-color: var(--accent-1);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.toggle-option.active {
+  border-color: var(--accent-1);
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--accent-1);
+  font-weight: 600;
+}
+
+.toggle-option.premium.active {
+  border-color: #FFD700;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 143, 0, 0.1));
+  color: #FFD700;
+}
+
+/* Badge premium en toggle */
+.toggle-option .badge {
+  position: static;
+  transform: none;
+  margin-left: var(--spacing-xs);
+}
+
+/* ===================================
+   🔄 TOGGLE SWITCH - Nuevo diseño
+   =================================== */
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 32px;  /* Aumentado de var(--spacing-lg) para más separación lateral */
+  background: var(--panel-1);
+  border-radius: 20px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  position: relative;
+}
+
+.toggle-option-text {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  z-index: 1;
+  padding: 0 var(--spacing-xs);
+}
+
+.toggle-option-text.premium {
+  color: #FFD700;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-slider:hover {
+  background: var(--accent-1);
+}
+
+.toggle-slider.active {
+  background: var(--accent-1);
+}
+
+.toggle-slider.active:hover {
+  background: var(--accent-1-hover, #00b4d8);
+}
+
+.toggle-indicator {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  left: 3px;
+}
+
+.toggle-slider.active .toggle-indicator {
+  transform: translateX(20px);
+}
+
+/* Cuando el toggle está activo, cambiar colores del texto */
+.toggle-switch:has(.toggle-slider.active) .toggle-option-text:first-child {
+  color: var(--muted);
+}
+
+.toggle-switch:has(.toggle-slider.active) .toggle-option-text:last-child {
+  color: var(--accent-1);
+}
+
+.toggle-switch:has(.toggle-slider.active.premium) .toggle-option-text:last-child {
+  color: #1a1a1a;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Estado premium del toggle slider */
+.toggle-slider.active.premium {
+  background: linear-gradient(135deg, #FFD700, #FF8F00);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+  animation: badge-shimmer 3s infinite;
+}
+
+/* Estado disabled para toggle switch */
+.toggle-slider.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.toggle-option-text.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===================================
+   🎯 ACCIONES DEL FORMULARIO
+   =================================== */
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;  /* Centrado horizontalmente */
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--spacing-lg);
+}
+
+.form-actions .btn {
+  min-width: 160px;  /* Aumentado de 140px */
+  padding: var(--spacing-md) var(--spacing-xl);  /* Más padding interno */
+}
+
+/* ===================================
+   📱 RESPONSIVE - CONTENT FORM MODAL
+   =================================== */
+
+@media (max-width: 768px) {
+  .content-form {
+    gap: var(--spacing-md);
+  }
+
+  .form-section {
+    gap: var(--spacing-sm);
+  }
+
+  .toggle-options {
+    flex-direction: column;
+  }
+
+  .toggle-option {
+    min-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .toggle-switch {
+    width: 100%;
+    justify-content: space-between;
+    gap: 24px;  /* Aumentado de var(--spacing-md) para móviles */
+    padding: var(--spacing-sm);
+  }
+
+  .toggle-option-text {
+    font-size: 13px;
+    padding: 0 var(--spacing-xs);
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: var(--spacing-sm);
+    align-items: center;  /* Centrar botones en móviles */
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    min-width: unset;
+    max-width: 280px;  /* Limitar ancho máximo en móviles */
+  }
+}
+
+/* ===================================
+   📁 FILE UPLOAD COMPONENTS
+   =================================== */
+
+.file-upload-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.file-upload-label {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.file-upload-label .required {
+  color: var(--error);
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.file-upload-input {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+}
+
+.file-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius);
+  background: var(--panel-1);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.file-upload-button:hover {
+  border-color: var(--accent-1);
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.file-upload-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.thumbnail-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.file-upload-hint {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 💫 ANIMACIÓN DE BRILLO PARA TOGGLE PREMIUM */
+@keyframes badge-shimmer {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-source-display {
+    padding: var(--spacing-sm);
+  }
+
+  .source-value {
+    font-size: 14px;
+    padding: var(--spacing-xs);
+  }
+
+  .form-section h3 {
+    font-size: 16px;
+  }
+}

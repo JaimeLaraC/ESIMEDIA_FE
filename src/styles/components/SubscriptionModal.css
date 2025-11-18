@@ -1,0 +1,140 @@
+/* ===================================
+   🔄 SUBSCRIPTION MODAL - MODAL DE CAMBIO DE PLAN
+   =================================== */
+
+.subscription-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 32px);
+}
+
+/* Información del plan actual */
+.current-plan-info {
+  text-align: center;
+  padding: clamp(16px, 3vw, 20px);
+  background: var(--panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.current-plan-info h3 {
+  color: var(--text);
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 600;
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.current-plan-info .plan-badge {
+  display: inline-block;
+  margin: 0;
+}
+
+/* Estilo dorado para el badge premium */
+.current-plan-info .plan-badge.premium-badge {
+  background: linear-gradient(135deg, #FFD700, #FF8F00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Sección de cambio de plan */
+.change-plan-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 24px);
+  align-items: center;
+}
+
+.change-plan-section p {
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 16px);
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Preview de la card del plan target */
+.change-plan-section .card-plan {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  pointer-events: none; /* No clickable */
+  opacity: 0.95;
+}
+
+/* LISTA DE CARACTERÍSTICAS - Usando estilos de PlanPage */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(24px, 4vw, 32px) 0;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 2vw, 16px);
+  padding: clamp(8px, 1.5vw, 10px) 0;
+  color: var(--text);
+  font-size: clamp(14px, 2.3vw, 16px);
+  line-height: 1.5;
+}
+
+.feature-icon {
+  color: var(--accent-1);
+  font-weight: 700;
+  font-size: clamp(16px, 2.5vw, 18px);
+  flex-shrink: 0;
+}
+
+.card-premium .feature-icon {
+  color: #FFD700;
+}
+
+/* Botón de cambio de plan */
+.change-plan-section .btn {
+  margin-top: clamp(8px, 1.5vw, 12px);
+  min-width: 200px;
+}
+
+/* ===================================
+   📱 RESPONSIVE - SUBSCRIPTION MODAL
+   =================================== */
+
+@media (max-width: 768px) {
+  .subscription-modal-content {
+    gap: clamp(20px, 5vw, 24px);
+  }
+
+  .current-plan-info {
+    padding: clamp(14px, 4vw, 18px);
+  }
+
+  .change-plan-section .card-plan {
+    max-width: 100%;
+  }
+
+  .change-plan-section .btn {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription-modal-content {
+    gap: 16px;
+  }
+
+  .current-plan-info {
+    padding: 12px;
+  }
+
+  .change-plan-section {
+    gap: 16px;
+  }
+
+  .change-plan-section p {
+    font-size: 14px;
+  }
+}

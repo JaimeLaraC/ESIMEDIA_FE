@@ -1,0 +1,180 @@
+/* 🎯 COMPONENTE DE ANUNCIO PREMIUM */
+.premium-ad {
+  width: 300px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-ad::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.premium-ad__content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 🌟 HEADER DEL ANUNCIO */
+.premium-ad__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.premium-ad__icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  display: block;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.premium-ad__title {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 📋 LISTA DE BENEFICIOS */
+.premium-ad__body {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.premium-ad__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.premium-ad__benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.premium-ad__benefit-icon {
+  font-size: 1.2rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* 🎯 BOTÓN Y FOOTER */
+.premium-ad__footer {
+  text-align: center;
+}
+
+.premium-ad__upgrade-btn {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  width: 100%;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.premium-ad__upgrade-btn:hover {
+  background: linear-gradient(135deg, #FFE55C, #FFB347);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+.premium-ad__upgrade-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.premium-ad__disclaimer {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 1024px) {
+  .premium-ad {
+    width: 250px;
+    padding: 20px;
+    min-height: 350px;
+  }
+
+  .premium-ad__title {
+    font-size: 1.2rem;
+  }
+
+  .premium-ad__benefit {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-ad {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-ad {
+    width: 100%;
+    max-width: 280px;
+    padding: 16px;
+    min-height: 300px;
+  }
+
+  .premium-ad__title {
+    font-size: 1.1rem;
+  }
+
+  .premium-ad__benefit {
+    font-size: 0.85rem;
+  }
+
+  .premium-ad__upgrade-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

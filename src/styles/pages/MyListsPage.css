@@ -1,0 +1,129 @@
+/* My Lists Page - New Design with Two Sections */
+
+.my-lists-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 48px 40px 20px 40px;
+  min-height: calc(100vh - 100px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .my-lists-page {
+    padding: 48px 60px 20px 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .my-lists-page {
+    padding: 48px 80px 20px 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .my-lists-page {
+    padding: 48px 100px 20px 100px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .my-lists-page {
+    padding: 48px 120px 20px 120px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .my-lists-page {
+    padding: 48px 140px 20px 140px;
+  }
+}
+
+/* Page Header */
+.my-lists-page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.my-lists-page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.my-lists-page-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Page Content */
+.my-lists-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Section Wrappers */
+.my-lists-section-wrapper,
+.public-lists-section-wrapper {
+  width: 100%;
+}
+
+/* My Lists Section with Ad Layout */
+.my-lists-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Ad Container */
+.my-lists-ad-container {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Desktop Layout: My Lists and Ad side by side */
+@media (min-width: 1024px) {
+  .my-lists-section-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .my-lists-ad-container {
+    width: 320px;
+    margin-top: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .my-lists-page {
+    padding: 32px 20px 20px 20px;
+  }
+
+  .my-lists-page-title {
+    font-size: 2rem;
+  }
+
+  .my-lists-page-subtitle {
+    font-size: 1rem;
+  }
+
+  .my-lists-page-content {
+    gap: 3rem;
+  }
+
+  .my-lists-ad-container {
+    margin-top: 1.5rem;
+  }
+}
